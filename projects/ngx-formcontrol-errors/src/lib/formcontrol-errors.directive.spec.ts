@@ -55,6 +55,10 @@ describe('FormcontrolErrorsDirective', () => {
     );
   });
 
+  afterEach(() => {
+    fixture.destroy();
+  });
+
   it('should have one control', () => {
     expect(controls.length).toBe(1);
   });
@@ -69,15 +73,15 @@ describe('FormcontrolErrorsDirective', () => {
 
   it('should trigger `blur` event', () => {
     const input = controls[0];
-    const control: any = controls[0].injector.get(FormcontrolErrorsDirective, null, {
+    const control = controls[0].injector.get(FormcontrolErrorsDirective, null, {
       optional: false,
     });
 
-    spyOn(control, 'onBlur');
+    spyOn(control as any, 'onBlur');
     input.triggerEventHandler('blur', null);
     fixture.detectChanges();
 
-    expect(control.onBlur).toHaveBeenCalled();
+    expect(control?.onBlur).toHaveBeenCalled();
   });
 
   it('should have a `required` error displayed', () => {
@@ -93,4 +97,21 @@ describe('FormcontrolErrorsDirective', () => {
     expect(errorComponent.innerText).toBe('required');
   });
 
+  it('should not display any error if all validations are passed successfully', () => {
+    const debugElement = controls[0];
+
+    const testComponent = fixture.componentInstance;
+    testComponent.form.setValue({
+      name: 'Joe Doe',
+    });
+
+    debugElement.triggerEventHandler('blur', null);
+    fixture.detectChanges();
+
+    const errorComponent = fixture.debugElement.query(
+      By.css('ngx-formcontrol-errors')
+    ).nativeElement as HTMLElement;
+
+    expect(errorComponent.innerText).toBe('');
+  });
 });
