@@ -101,7 +101,7 @@
       "projectType": "library",
       "root": "projects/ngx-formcontrol-errors",
       "sourceRoot": "projects/ngx-formcontrol-errors/src",
-      "prefix": "lib",
+      "prefix": "ngx",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
