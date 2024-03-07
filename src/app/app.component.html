@@ -332,5 +332,11 @@
 <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
+<form [formGroup]="form">
+  <div>
+    <label for="name">Name</label>
+    <input type="text" formControlName="name" ngxFormcontrolErrors>
+  </div>
+</form>
 
 <router-outlet />

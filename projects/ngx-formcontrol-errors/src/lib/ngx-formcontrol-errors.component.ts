@@ -6,11 +6,7 @@ import {
 @Component({
   selector: 'ngx-formcontrol-errors',
   standalone: true,
-  template: `
-    <p>
-      {{ message }}
-    </p>
-  `,
+  template: `{{ message }}`,
 })
 export class NgxFormcontrolErrorsComponent {
   @Input()

@@ -58,8 +58,6 @@ export class FormcontrolErrorsDirective {
         this.validataStatus(status);
       })
     );
-
-
   }
 
   ngOnDestroy(): void {
@@ -70,6 +68,13 @@ export class FormcontrolErrorsDirective {
     if (!this.errorInfoComponent) {
       throw new Error('No error info component found');
     }
+    console.table({
+      status: this.control?.status,
+      touched: this.control?.touched,
+      untouched: this.control?.untouched,
+      dirty: this.control?.dirty,
+      pristine: this.control?.pristine,
+    });
     if (['INVALID', 'DISABLED'].includes(status) && this.control?.touched) {
       this.errorInfoComponent.instance.message = this.getMessage(
         this.control.errors as ValidationErrors
@@ -82,6 +87,6 @@ export class FormcontrolErrorsDirective {
 
   getMessage(errors: ValidationErrors) {
     const parsedErrors = Object.keys(errors);
-    return parsedErrors[0];
+    return parsedErrors.join(', ');
   }
 }
