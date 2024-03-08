@@ -14,9 +14,11 @@ import {
 
 import { Subscription } from 'rxjs';
 
+import { Messages } from './data';
 import {
   NgxFormcontrolErrorsComponent,
 } from './ngx-formcontrol-errors.component';
+import { parseError } from './utils';
 
 @Directive({
   selector: '[ngxFormcontrolErrors]',
@@ -86,7 +88,7 @@ export class FormcontrolErrorsDirective {
   }
 
   getMessage(errors: ValidationErrors) {
-    const parsedErrors = Object.keys(errors);
-    return parsedErrors.join(', ');
+    const parsedErrors = parseError(errors);
+    return Messages[parsedErrors.message];
   }
 }
