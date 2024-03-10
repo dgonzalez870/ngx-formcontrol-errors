@@ -19,10 +19,8 @@ export class AppComponent {
   title = 'ngx-form-control-errors';
 
   form = this.formBuilder.group({
-    name: [
-      '',
-      [Validators.required, Validators.maxLength(5), Validators.email],
-    ],
+    name: ['', [Validators.required, Validators.maxLength(10)]],
+    email: ['', [Validators.required, Validators.email]],
   });
 
   constructor(private readonly formBuilder: FormBuilder) {}
