@@ -59,7 +59,6 @@ main {
 
 .form-row {
   display: block;
-  margin-bottom: 1rem;
 
   label {
     display: inline-block;
@@ -71,15 +70,20 @@ main {
     width: 100%;
     line-height: 1.5;
     box-sizing: border-box;
+
+    &.ng-invalid.ng-touched {
+      border: solid 1px var(--error-color);
+      outline: var(--error-color);
+    }
   }
 }
-
 
 ::ng-deep ngx-formcontrol-errors {
   display: block;
   font-size: 0.75rem;
   color: var(--error-color);
   text-align: right;
+  min-height: 1rem;
 }
 
 @media screen and (max-width: 650px) {
