@@ -33,6 +33,7 @@ export class FormcontrolErrorsDirective {
   @HostListener('blur')
   onBlur(): void {
     if (this.control) {
+      this.control.markAsTouched();
       this.validataStatus(this.control.status);
     }
   }
