@@ -50,6 +50,22 @@
               ],
               "outputHashing": "all"
             },
+            "github-pages": {
+              "baseHref": "/ngx-formcontrol-errors/",
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
             "development": {
               "optimization": false,
               "extractLicenses": false,
@@ -63,6 +79,9 @@
           "configurations": {
             "production": {
               "buildTarget": "ngx-form-control-errors:build:production"
+            },
+            "github-pages": {
+              "buildTarget": "ngx-form-control-errors:build:github-pages"
             },
             "development": {
               "buildTarget": "ngx-form-control-errors:build:development"
@@ -93,6 +112,15 @@
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
         }
       }
@@ -130,5 +158,10 @@
         }
       }
     }
+  },
+  "cli": {
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }
