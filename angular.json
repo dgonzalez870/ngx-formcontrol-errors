@@ -155,6 +155,15 @@
               "zone.js/testing"
             ]
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/ngx-formcontrol-errors/**/*.ts",
+              "projects/ngx-formcontrol-errors/**/*.html"
+            ]
+          }
         }
       }
     }
