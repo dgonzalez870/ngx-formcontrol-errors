@@ -14,6 +14,7 @@ import {
 } from '@angular/forms';
 import { By } from '@angular/platform-browser';
 
+import { Messages } from './data';
 import { FormcontrolErrorsDirective } from './formcontrol-errors.directive';
 
 // Dummy component for testing the directive
@@ -94,7 +95,7 @@ describe('FormcontrolErrorsDirective', () => {
       By.css('ngx-formcontrol-errors')
     ).nativeElement;
 
-    expect(errorComponent.innerText).toBe('required');
+    expect(errorComponent.innerText).toBe(Messages['required']);
   });
 
   it('should not display any error if all validations are passed successfully', () => {
