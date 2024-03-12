@@ -1,4 +1,6 @@
-export const Messages: { [key: string]: string } = {
+import { KeyValueObject } from '../types';
+
+export const Messages: KeyValueObject = {
   required: 'This field is required',
   min: 'The minimun allowed values is {{value}}',
   max: 'The max allowed value is {{value}}',
@@ -7,7 +9,6 @@ export const Messages: { [key: string]: string } = {
   email: 'Invalid email',
   pattern: 'Invalid pattern',
 };
-
 
 /**
  * formato de errores

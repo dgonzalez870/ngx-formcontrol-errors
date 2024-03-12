@@ -2,6 +2,7 @@ import {
   ComponentRef,
   Directive,
   HostListener,
+  Inject,
   Optional,
   ViewContainerRef,
 } from '@angular/core';
@@ -17,7 +18,11 @@ import { Subscription } from 'rxjs';
 import {
   NgxFormcontrolErrorsComponent,
 } from './ngx-formcontrol-errors.component';
-import { parseError } from './utils';
+import {
+  ERROR_MSG_PARSER,
+  ErrorMsgParser,
+  ErrorMsgParserService,
+} from './providers/error-msg-parser';
 
 @Directive({
   selector: '[ngxFormcontrolErrors]',
@@ -28,6 +33,7 @@ export class FormcontrolErrorsDirective {
     null;
   private control: AbstractControl | null = null;
   private sub$ = new Subscription();
+  private errorParser?: ErrorMsgParser;
 
   @HostListener('blur')
   onBlur(): void {
@@ -38,8 +44,12 @@ export class FormcontrolErrorsDirective {
   }
   constructor(
     private readonly viewContainerRef: ViewContainerRef,
+    private readonly errorMsgParser: ErrorMsgParserService,
     @Optional() private readonly formControlName: FormControlName,
-    @Optional() private readonly formControl: NgControl
+    @Optional() private readonly formControl: NgControl,
+    @Optional()
+    @Inject(ERROR_MSG_PARSER)
+    private readonly customErrorMsgParser: ErrorMsgParser
   ) {}
 
   ngOnInit(): void {
@@ -50,6 +60,8 @@ export class FormcontrolErrorsDirective {
         'No control found, `ngxFormControlErrors` must be used with `formControlName` or `formControl`'
       );
     }
+
+    this.errorParser = this.customErrorMsgParser || this.errorMsgParser;
 
     this.errorInfoComponent = this.viewContainerRef.createComponent(
       NgxFormcontrolErrorsComponent
@@ -71,8 +83,12 @@ export class FormcontrolErrorsDirective {
       throw new Error('No error info component found');
     }
 
+    if (!this.errorParser) {
+      throw new Error('No error parser found');
+    }
+
     if (['INVALID', 'DISABLED'].includes(status) && this.control?.touched) {
-      this.errorInfoComponent.instance.message = parseError(
+      this.errorInfoComponent.instance.message = this.errorParser.parse(
         this.control.errors as ValidationErrors
       );
     } else if (status === 'VALID' || this.control?.untouched) {
