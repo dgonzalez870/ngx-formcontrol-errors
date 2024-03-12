@@ -1,36 +1,49 @@
 import { ValidationErrors } from '@angular/forms';
 
+import { Messages } from '../data';
+
 export interface ParsedError {
   message: string;
   args?: any;
 }
 
+export function errorMessageParser(
+  errorKey: string,
+  value: string | number | null
+): string {
+  const message = Messages[errorKey];
+  if (!message) {
+    throw new Error(`Error message for ${errorKey} not found`);
+  }
+
+  return message.trim().replace('{{value}}', (value ?? '').toString());
+}
 
 /**
  * Parses the Angular built-in validation errors to be displayed
  */
-export function parseError(error: ValidationErrors): ParsedError {
+export function parseError(error: ValidationErrors): string {
   const keyError = Object.keys(error)[0];
-  let args: any = {};
+  let msg: string = '';
+  let val = null;
   switch (keyError) {
     case 'min':
-      args = { min: error[keyError].min };
+      val = error[keyError].min;
       break;
     case 'max':
-      args = { max: error[keyError].max };
+      val = error[keyError].max;
       break;
     case 'minlength':
-      args = { minlength: error[keyError].requiredLength };
+      val = error[keyError].requiredLength;
       break;
     case 'maxlength':
-      args = { maxlength: error[keyError].requiredLength };
+      val = error[keyError].requiredLength;
       break;
     default:
       break;
   }
 
-  return {
-    message: keyError,
-    args,
-  };
+  msg = errorMessageParser(keyError, val);
+
+  return msg;
 }

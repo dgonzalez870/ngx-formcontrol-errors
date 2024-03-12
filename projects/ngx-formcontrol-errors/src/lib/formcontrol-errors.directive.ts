@@ -14,7 +14,6 @@ import {
 
 import { Subscription } from 'rxjs';
 
-import { Messages } from './data';
 import {
   NgxFormcontrolErrorsComponent,
 } from './ngx-formcontrol-errors.component';
@@ -79,17 +78,12 @@ export class FormcontrolErrorsDirective {
       pristine: this.control?.pristine,
     });
     if (['INVALID', 'DISABLED'].includes(status) && this.control?.touched) {
-      this.errorInfoComponent.instance.message = this.getMessage(
+      this.errorInfoComponent.instance.message = parseError(
         this.control.errors as ValidationErrors
       );
     } else if (status === 'VALID' || this.control?.untouched) {
       this.errorInfoComponent.instance.message = '';
       this.errorInfoComponent.changeDetectorRef.detectChanges();
     }
-  }
-
-  getMessage(errors: ValidationErrors) {
-    const parsedErrors = parseError(errors);
-    return Messages[parsedErrors.message];
   }
 }
