@@ -3,6 +3,9 @@
   "ignorePatterns": [
     "projects/**/*"
   ],
+  "plugins": [
+    "eslint-plugin-tsdoc"
+  ],
   "overrides": [
     {
       "files": [
@@ -43,5 +46,8 @@
       ],
       "rules": {}
     }
-  ]
+  ],
+  "rules": {
+    "tsdoc/syntax": "warn"
+  }
 }
