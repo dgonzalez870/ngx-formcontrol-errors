@@ -2,16 +2,15 @@ import { ValidationErrors } from '@angular/forms';
 
 export interface ParsedError {
   message: string;
-  args?: any;
+  args?: { [key: string]: string | number };
 }
-
 
 /**
  * Parses the Angular built-in validation errors to be displayed
  */
 export function parseError(error: ValidationErrors): ParsedError {
   const keyError = Object.keys(error)[0];
-  let args: any = {};
+  let args: { [key: string]: string | number } = {};
   switch (keyError) {
     case 'min':
       args = { min: error[keyError].min };
