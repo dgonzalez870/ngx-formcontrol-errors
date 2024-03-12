@@ -2,6 +2,8 @@ import {
   ComponentRef,
   Directive,
   HostListener,
+  OnDestroy,
+  OnInit,
   Optional,
   ViewContainerRef,
 } from '@angular/core';
@@ -24,7 +26,7 @@ import { parseError } from './utils';
   selector: '[ngxFormcontrolErrors]',
   standalone: true,
 })
-export class FormcontrolErrorsDirective {
+export class FormcontrolErrorsDirective implements OnInit, OnDestroy {
   private errorInfoComponent: ComponentRef<NgxFormcontrolErrorsComponent> | null =
     null;
   private control: AbstractControl | null = null;
