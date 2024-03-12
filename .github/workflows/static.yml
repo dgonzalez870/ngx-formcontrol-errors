@@ -44,6 +44,8 @@ jobs:
         run: npx ng build ngx-formcontrol-errors
       - name: Build
         run: npx ng build -c github-pages
+      - name: Test
+        run: npx ng test --no-watch --no-progress --browsers=ChromeHeadless
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
