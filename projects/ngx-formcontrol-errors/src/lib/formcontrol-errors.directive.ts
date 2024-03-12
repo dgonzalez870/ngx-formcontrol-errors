@@ -70,13 +70,7 @@ export class FormcontrolErrorsDirective {
     if (!this.errorInfoComponent) {
       throw new Error('No error info component found');
     }
-    console.table({
-      status: this.control?.status,
-      touched: this.control?.touched,
-      untouched: this.control?.untouched,
-      dirty: this.control?.dirty,
-      pristine: this.control?.pristine,
-    });
+
     if (['INVALID', 'DISABLED'].includes(status) && this.control?.touched) {
       this.errorInfoComponent.instance.message = parseError(
         this.control.errors as ValidationErrors
