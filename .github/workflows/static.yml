@@ -40,6 +40,8 @@ jobs:
           node-version: 18 # optional
       - name: Install dependencies
         run: npm i
+      - name: Library build
+        run: npx ng build ngx-formcontrol-errors
       - name: Build
         run: npx ng build -c github-pages
       - name: Setup Pages
