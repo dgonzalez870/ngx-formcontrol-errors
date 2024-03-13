@@ -26,6 +26,40 @@ import {
   ErrorMsgParserService,
 } from './providers/error-msg-parser';
 
+/**
+ * Allows ease way to display `ValidationErrors` in a form.
+ *
+ * @example
+ *
+ * ```typescript
+ * @Component({
+ *  selector: 'app-form',
+ *  standalone: true,
+ *  imports: [FormcontrolErrorsDirective, ReactiveFormsModule],
+ *  template: `
+ *    <form [formGroup]="form">
+ *     <div class="form-row">
+ *       <label for="name">Name</label>
+ *       <input id="name" type="text" formControlName="name" ngxFormcontrolErrors>
+ *     </div>
+ *     <div class="form-row">
+ *       <label for="email">Email</label>
+ *       <input id="email" type="email" formControlName="email" ngxFormcontrolErrors>
+ *     </div>
+ *    </form>
+ *  `
+ * })
+ * export class AppComponent {
+ *
+ *  form = this.formBuilder.group({
+ *    name: ['', [Validators.required, Validators.maxLength(10)]],
+ *    email: ['', [Validators.required, Validators.email]],
+ *  });
+ *
+ * }
+ * ```
+ *
+ */
 @Directive({
   selector: '[ngxFormcontrolErrors]',
   standalone: true,
@@ -37,6 +71,9 @@ export class FormcontrolErrorsDirective implements OnInit, OnDestroy {
   private sub$ = new Subscription();
   private errorParser?: ErrorMsgParser;
 
+  /**
+   * @internal
+   */
   @HostListener('blur')
   onBlur(): void {
     if (this.control) {
@@ -54,6 +91,9 @@ export class FormcontrolErrorsDirective implements OnInit, OnDestroy {
     private readonly customErrorMsgParser: ErrorMsgParser
   ) {}
 
+  /**
+   * @internal
+   */
   ngOnInit(): void {
     this.control = this.formControlName?.control || this.formControl?.control;
 
@@ -76,10 +116,16 @@ export class FormcontrolErrorsDirective implements OnInit, OnDestroy {
     );
   }
 
+  /**
+   * @internal
+   */
   ngOnDestroy(): void {
     this.sub$.unsubscribe();
   }
 
+  /**
+   * @internal
+   */
   validataStatus(status: string): void {
     if (!this.errorInfoComponent) {
       throw new Error('No error info component found');

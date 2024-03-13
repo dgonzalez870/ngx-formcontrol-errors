@@ -1,5 +1,8 @@
 import { KeyValueObject } from '../types';
 
+/**
+ * Readable messages for the built-in valitators
+ */
 export const Messages: KeyValueObject = {
   required: 'This field is required',
   min: 'The minimun allowed values is {{value}}',
@@ -9,13 +12,3 @@ export const Messages: KeyValueObject = {
   email: 'Invalid email',
   pattern: 'Invalid pattern',
 };
-
-/**
- * formato de errores
- *
- * maxlength: { actualLength: number, requiredLength: number }
- * minlength: { actualLength: number, requiredLength: number }
- * min: { actual: number, min: number }
- * max: { actual: number, max: number }
- * pattern: { actualValue: string, requiredPattern: string }
- */
