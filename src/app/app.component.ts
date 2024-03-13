@@ -23,5 +23,9 @@ export class AppComponent {
     email: ['', [Validators.required, Validators.email]],
   });
 
-  constructor(private readonly formBuilder: FormBuilder) {}
+  constructor(private readonly formBuilder: FormBuilder) { }
+
+  reset(): void {
+    this.form.reset();
+  }
 }

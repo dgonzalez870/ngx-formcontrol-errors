@@ -9,13 +9,14 @@
         <form [formGroup]="form">
           <div class="form-row">
             <label for="name">Name</label>
-            <input type="text" formControlName="name" ngxFormcontrolErrors>
+            <input type="text" formControlName="name" ngxFormcontrolErrors />
           </div>
           <div class="form-row">
             <label for="name">Email</label>
-            <input type="email" formControlName="email" ngxFormcontrolErrors>
+            <input type="email" formControlName="email" ngxFormcontrolErrors />
           </div>
         </form>
+        <button (click)="reset()">Reset Form</button>
       </div>
     </div>
   </div>
