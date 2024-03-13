@@ -98,3 +98,37 @@ export const appConfig: ApplicationConfig = {
   ],
 };
 ```
+
+## Styling
+
+This module does not provice any CSS stylesheet or configuration,
+so a custom style must be applied to fit the Look and feel of the application.
+
+This directive attaches a `ngx-formcontrol-errors` component as siblings of the `input` elements,
+styles to those components can be applied globally in the `styles.scss` of the application
+
+```css
+:root {
+  --error-color: #ff0000;
+}
+
+ngx-formcontrol-errors {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--error-color);
+  text-align: right;
+  min-height: 1rem;
+}
+```
+
+Styles can also be applied at component level using `ng-deep`
+
+```css
+::ng-deep ngx-formcontrol-errors {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--error-color);
+  text-align: right;
+  min-height: 1rem;
+}
+```
