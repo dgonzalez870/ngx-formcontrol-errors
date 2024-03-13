@@ -70,9 +70,11 @@ main {
     width: 100%;
     line-height: 1.5;
     box-sizing: border-box;
+    border-width: 2px;
+    border-style: solid;
 
     &.ng-invalid.ng-touched {
-      border: solid 1px var(--error-color);
+      border-color: var(--error-color);
       outline: var(--error-color);
     }
   }
@@ -84,6 +86,10 @@ main {
   color: var(--error-color);
   text-align: right;
   min-height: 1rem;
+}
+
+button {
+  margin-top: 1rem;
 }
 
 @media screen and (max-width: 650px) {
