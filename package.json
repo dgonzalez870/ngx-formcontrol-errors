@@ -9,7 +9,7 @@
     "test": "ng test",
     "prepare": "husky",
     "lint": "ng lint",
-    "docs": "npx typedoc --out ./tmp/docs --entryPointStrategy expand ./projects/ngx-formcontrol-errors/src"
+    "release": "npx commit-and-tag-version"
   },
   "private": true,
   "dependencies": {
@@ -39,6 +39,7 @@
     "@types/jasmine": "~5.1.0",
     "@typescript-eslint/eslint-plugin": "6.19.0",
     "@typescript-eslint/parser": "6.19.0",
+    "commit-and-tag-version": "^12.2.0",
     "eslint": "^8.56.0",
     "eslint-plugin-tsdoc": "^0.2.17",
     "husky": "^9.0.11",
