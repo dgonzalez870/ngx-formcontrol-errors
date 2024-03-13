@@ -1,6 +1,22 @@
 {
   "name": "ngx-form-control-errors",
   "version": "0.0.0",
+  "description": "A directive for showing errors in Angular form controls in reactive forms",
+  "keywords": [
+    "angular",
+    "form",
+    "control",
+    "errors",
+    "reactive",
+    "forms",
+    "formcontrol",
+    "directive"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Dennys González",
+    "email": "dgonzalez870@yahoo.com"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -11,7 +27,6 @@
     "lint": "ng lint",
     "release": "npx commit-and-tag-version"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^17.2.0",
     "@angular/common": "^17.2.0",
