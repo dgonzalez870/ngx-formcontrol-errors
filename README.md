@@ -10,7 +10,7 @@ See It working on this [Demo](https://dgonzalez870.github.io/ngx-formcontrol-err
 
 ## Usage
 
-1. Import it in the component or module (You must import [ReactiveFormsModule](https://angular.io/api/forms/ReactiveFormsModule) too)
+1. Import `FormcontrolErrorsDirective` in the component or module (You must import [ReactiveFormsModule](https://angular.io/api/forms/ReactiveFormsModule) too)
 
 ```typescript
 import { Component } from '@angular/core';
@@ -21,7 +21,7 @@ import { FormcontrolErrorsDirective } from "ngx-formcontrol-errors";
 @Component({
   selector: 'app-form',
   standalone: true,
-  imports: [RouterOutlet, FormcontrolErrorsDirective, ReactiveFormsModule],
+  imports: [FormcontrolErrorsDirective, ReactiveFormsModule],
   templateUrl: './app-form.component.html',
   styleUrl: './app-form.component.scss',
 })
@@ -61,7 +61,8 @@ form = this.formBuilder.group({
 
 ## Customize Messages
 
-By default this module provides the following messages for [Angular built-in Validators](https://angular.io/api/forms/Validators):
+By default this module provides the following messages for
+[Angular built-in Validators](https://angular.io/api/forms/Validators):
 
 ```typescript
 export const Messages: KeyValueObject = {
@@ -75,17 +76,14 @@ export const Messages: KeyValueObject = {
 };
 ```
 
-`{{value}}` is a string to be replaced at runtime by the actual validation reference value. Those messages can be overrided or extended by injecting new ones using `FORM_ERROR_MESSAGES_PROVIDER` in a module or component.
-
+`{{value}}` is a string to be replaced at runtime by the actual validation reference value.
+Those messages can be overrided or extended by injecting new ones using
+`FORM_ERROR_MESSAGES_PROVIDER` in the [ApplicationConfig](https://angular.io/api/core/ApplicationConfig) object.
 
 ```typescript
-@Component({
-  selector: 'app-form',
-  standalone: true,
-  imports: [RouterOutlet, FormcontrolErrorsDirective, ReactiveFormsModule],
-  templateUrl: './app-form.component.html',
-  styleUrl: './app-form.component.scss',
+export const appConfig: ApplicationConfig = {
   providers: [
+    ...
     {
       provide: FORM_ERROR_MESSAGES_PROVIDER,
       useValue: {
@@ -93,15 +91,10 @@ export const Messages: KeyValueObject = {
         required: "This is a required field",
         // This is a message for a custom validator and will extend the default
         // messages
-        myCustomValidation: 'There is an error',
-      }
-    }
-  ]
-})
-export class AppForm {
-
-  constructor(private readonly formBuilder: FormBuilder) {}
-
-  ...
-}
+        myCustomValidation: "There is an error",
+      },
+    },
+    ...
+  ],
+};
 ```
