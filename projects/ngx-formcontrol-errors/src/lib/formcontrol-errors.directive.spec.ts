@@ -22,8 +22,13 @@ import { FormcontrolErrorsDirective } from './formcontrol-errors.directive';
   template: `
     <form [formGroup]="form">
       <div>
-        <label>Name</label>
-        <input type="text" ngxFormcontrolErrors formControlName="name" />
+        <label for="name">Name</label>
+        <input
+          id="name"
+          type="text"
+          ngxFormcontrolErrors
+          formControlName="name"
+        />
       </div>
     </form>
   `,
@@ -78,7 +83,10 @@ describe('FormcontrolErrorsDirective', () => {
       optional: false,
     });
 
-    spyOn(control as any, 'onBlur');
+    spyOn<FormcontrolErrorsDirective>(
+      control as FormcontrolErrorsDirective,
+      'onBlur'
+    );
     input.triggerEventHandler('blur', null);
     fixture.detectChanges();
 
