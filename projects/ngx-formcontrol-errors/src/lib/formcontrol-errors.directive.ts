@@ -2,6 +2,7 @@ import {
   ComponentRef,
   Directive,
   HostListener,
+  Inject,
   OnDestroy,
   OnInit,
   Optional,
@@ -16,12 +17,49 @@ import {
 
 import { Subscription } from 'rxjs';
 
-import { Messages } from './data';
 import {
   NgxFormcontrolErrorsComponent,
 } from './ngx-formcontrol-errors.component';
-import { parseError } from './utils';
+import {
+  ERROR_MSG_PARSER,
+  ErrorMsgParser,
+  ErrorMsgParserService,
+} from './providers/error-msg-parser';
 
+/**
+ * Allows ease way to display `ValidationErrors` in a form.
+ *
+ * @example
+ *
+ * ```typescript
+ * @Component({
+ *  selector: 'app-form',
+ *  standalone: true,
+ *  imports: [FormcontrolErrorsDirective, ReactiveFormsModule],
+ *  template: `
+ *    <form [formGroup]="form">
+ *     <div class="form-row">
+ *       <label for="name">Name</label>
+ *       <input id="name" type="text" formControlName="name" ngxFormcontrolErrors>
+ *     </div>
+ *     <div class="form-row">
+ *       <label for="email">Email</label>
+ *       <input id="email" type="email" formControlName="email" ngxFormcontrolErrors>
+ *     </div>
+ *    </form>
+ *  `
+ * })
+ * export class AppComponent {
+ *
+ *  form = this.formBuilder.group({
+ *    name: ['', [Validators.required, Validators.maxLength(10)]],
+ *    email: ['', [Validators.required, Validators.email]],
+ *  });
+ *
+ * }
+ * ```
+ *
+ */
 @Directive({
   selector: '[ngxFormcontrolErrors]',
   standalone: true,
@@ -31,7 +69,11 @@ export class FormcontrolErrorsDirective implements OnInit, OnDestroy {
     null;
   private control: AbstractControl | null = null;
   private sub$ = new Subscription();
+  private errorParser?: ErrorMsgParser;
 
+  /**
+   * @internal
+   */
   @HostListener('blur')
   onBlur(): void {
     if (this.control) {
@@ -41,10 +83,17 @@ export class FormcontrolErrorsDirective implements OnInit, OnDestroy {
   }
   constructor(
     private readonly viewContainerRef: ViewContainerRef,
+    private readonly errorMsgParser: ErrorMsgParserService,
     @Optional() private readonly formControlName: FormControlName,
-    @Optional() private readonly formControl: NgControl
+    @Optional() private readonly formControl: NgControl,
+    @Optional()
+    @Inject(ERROR_MSG_PARSER)
+    private readonly customErrorMsgParser: ErrorMsgParser
   ) {}
 
+  /**
+   * @internal
+   */
   ngOnInit(): void {
     this.control = this.formControlName?.control || this.formControl?.control;
 
@@ -53,6 +102,8 @@ export class FormcontrolErrorsDirective implements OnInit, OnDestroy {
         'No control found, `ngxFormControlErrors` must be used with `formControlName` or `formControl`'
       );
     }
+
+    this.errorParser = this.customErrorMsgParser || this.errorMsgParser;
 
     this.errorInfoComponent = this.viewContainerRef.createComponent(
       NgxFormcontrolErrorsComponent
@@ -65,33 +116,32 @@ export class FormcontrolErrorsDirective implements OnInit, OnDestroy {
     );
   }
 
+  /**
+   * @internal
+   */
   ngOnDestroy(): void {
     this.sub$.unsubscribe();
   }
 
+  /**
+   * @internal
+   */
   validataStatus(status: string): void {
     if (!this.errorInfoComponent) {
       throw new Error('No error info component found');
     }
-    console.table({
-      status: this.control?.status,
-      touched: this.control?.touched,
-      untouched: this.control?.untouched,
-      dirty: this.control?.dirty,
-      pristine: this.control?.pristine,
-    });
+
+    if (!this.errorParser) {
+      throw new Error('No error parser found');
+    }
+
     if (['INVALID', 'DISABLED'].includes(status) && this.control?.touched) {
-      this.errorInfoComponent.instance.message = this.getMessage(
+      this.errorInfoComponent.instance.message = this.errorParser.parse(
         this.control.errors as ValidationErrors
       );
     } else if (status === 'VALID' || this.control?.untouched) {
       this.errorInfoComponent.instance.message = '';
       this.errorInfoComponent.changeDetectorRef.detectChanges();
     }
-  }
-
-  getMessage(errors: ValidationErrors) {
-    const parsedErrors = parseError(errors);
-    return Messages[parsedErrors.message];
   }
 }
