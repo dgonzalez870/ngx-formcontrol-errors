@@ -1,4 +1,4 @@
-# NgxFormControlErrors
+# NgxFormControlErrorsMsgs
 
 This is a directive that provides an uncomplicated way to show [Angular ValidationErrors](https://angular.io/api/forms/ValidationErrors) in [Reactive Forms](https://angular.io/guide/reactive-forms)
 
@@ -6,7 +6,7 @@ See It working on this [Demo](https://dgonzalez870.github.io/ngx-formcontrol-err
 
 ## Installation
 
-`npm install --save ngx-formcontrol-errors`
+`npm install --save ngx-formcontrol-errors-msgs`
 
 ## Usage
 
@@ -16,7 +16,7 @@ See It working on this [Demo](https://dgonzalez870.github.io/ngx-formcontrol-err
 import { Component } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
 
-import { FormcontrolErrorsDirective } from "ngx-formcontrol-errors";
+import { FormcontrolErrorsDirective } from "ngx-formcontrol-errors-msgs";
 
 @Component({
   selector: 'app-form',
