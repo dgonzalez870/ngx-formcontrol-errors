@@ -21,10 +21,13 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:directive": "npx ng build -c production ngx-formcontrol-errors",
+    "publish:directive": "cp README.md LICENSE ./dist/ngx-formcontrol-errors/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "prepare": "husky",
     "lint": "ng lint",
+    "docs": "npx typedoc --out ./tmp/docs --entryPointStrategy expand ./projects/ngx-formcontrol-errors/src",
     "release": "npx commit-and-tag-version"
   },
   "dependencies": {
