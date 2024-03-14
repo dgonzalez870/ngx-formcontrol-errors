@@ -59,7 +59,7 @@ form = this.formBuilder.group({
 </form>
 ```
 
-**Note:** CSS classes in the previous code are only for example purposes and are not required.
+**Note:** :warning: This module does not provide any CSS stylesheet, see [Styling](#styling). CSS classes in the previous code are only for example purposes and are not required.
 
 ## Customize Messages
 
