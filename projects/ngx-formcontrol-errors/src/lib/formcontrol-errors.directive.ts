@@ -135,11 +135,15 @@ export class FormcontrolErrorsDirective implements OnInit, OnDestroy {
       throw new Error('No error parser found');
     }
 
-    if (['INVALID', 'DISABLED'].includes(status) && this.control?.touched) {
+    if ('INVALID' === status && this.control?.touched) {
       this.errorInfoComponent.instance.message = this.errorParser.parse(
         this.control.errors as ValidationErrors
       );
-    } else if (status === 'VALID' || this.control?.untouched) {
+    } else if (
+      'DISABLED' === status ||
+      status === 'VALID' ||
+      this.control?.untouched
+    ) {
       this.errorInfoComponent.instance.message = '';
       this.errorInfoComponent.changeDetectorRef.detectChanges();
     }

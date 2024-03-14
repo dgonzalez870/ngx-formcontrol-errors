@@ -123,4 +123,26 @@ describe('FormcontrolErrorsDirective', () => {
 
     expect(errorComponent.innerText).toBe('');
   });
+
+  it('should hide validation errors on disabled fields', () => {
+    const debugElement = controls[0];
+
+    const testComponent = fixture.componentInstance;
+    const nameControl = testComponent.form.get('name');
+
+    debugElement.triggerEventHandler('blur', null);
+    fixture.detectChanges();
+
+    const errorComponent = fixture.debugElement.query(
+      By.css('ngx-formcontrol-errors')
+    ).nativeElement as HTMLElement;
+
+    // Shows validation error at first
+    expect(errorComponent.innerText).toBe(Messages['required']);
+
+    nameControl?.disable();
+    fixture.detectChanges();
+    // Does not show validation error on disabled field
+    expect(errorComponent.innerText).toBe('');
+  });
 });
