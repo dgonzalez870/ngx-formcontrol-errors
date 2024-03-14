@@ -2,7 +2,9 @@
 
 This is a directive that provides an uncomplicated way to show [Angular ValidationErrors](https://angular.io/api/forms/ValidationErrors) in [Reactive Forms](https://angular.io/guide/reactive-forms)
 
-See It working on this [Demo](https://dgonzalez870.github.io/ngx-formcontrol-errors/)
+See It working on this [Demo](https://dgonzalez870.github.io/ngx-formcontrol-errors/).
+
+You can also try it in your browser [here](https://stackblitz.com/edit/stackblitz-starters-xmrsdr?file=src%2Fapp%2Fapp.component.ts).
 
 ## Installation
 
