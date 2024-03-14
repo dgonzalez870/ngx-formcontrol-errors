@@ -1,6 +1,6 @@
 {
   "name": "ngx-form-control-errors",
-  "version": "0.0.1-1",
+  "version": "0.0.1-2",
   "description": "A directive for showing errors in Angular form controls in reactive forms",
   "keywords": [
     "angular",

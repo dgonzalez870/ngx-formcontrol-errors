@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.1-2](https://github.com/dgonzalez870/ngx-formcontrol-errors/compare/v0.0.1-1...v0.0.1-2) (2024-03-14)
+
+
+### Bug Fixes
+
+* hide validation errors on disabled controls ([#7](https://github.com/dgonzalez870/ngx-formcontrol-errors/issues/7)) ([dc74945](https://github.com/dgonzalez870/ngx-formcontrol-errors/commit/dc74945249b8f2c6f0c558bcbf6db58b3200ebf7))
+
 ## [0.0.1-1](https://github.com/dgonzalez870/ngx-formcontrol-errors/compare/v0.0.1-0...v0.0.1-1) (2024-03-13)
 
 ## 0.0.1-0 (2024-03-13)
