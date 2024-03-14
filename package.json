@@ -10,7 +10,8 @@
     "reactive",
     "forms",
     "formcontrol",
-    "directive"
+    "directive",
+    "messages"
   ],
   "license": "MIT",
   "author": {

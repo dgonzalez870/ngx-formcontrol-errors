@@ -1,8 +1,8 @@
 # NgxFormControlErrorsMsgs
 
-This is a directive that provides an uncomplicated way to show [Angular ValidationErrors](https://angular.io/api/forms/ValidationErrors) in [Reactive Forms](https://angular.io/guide/reactive-forms)
+This is a directive that provides an uncomplicated way to display [Angular ValidationErrors](https://angular.io/api/forms/ValidationErrors) in [Reactive Forms](https://angular.io/guide/reactive-forms)
 
-See It working on this [Demo](https://dgonzalez870.github.io/ngx-formcontrol-errors/).
+See It working on this [demo](https://dgonzalez870.github.io/ngx-formcontrol-errors/).
 
 You can also try it in your browser [here](https://stackblitz.com/edit/stackblitz-starters-xmrsdr?file=src%2Fapp%2Fapp.component.ts).
 
@@ -103,8 +103,8 @@ export const appConfig: ApplicationConfig = {
 
 ## Styling
 
-This module does not provice any CSS stylesheet or configuration,
-so a custom style must be applied to fit the Look and feel of the application.
+This module does not provide any CSS stylesheet or settings,
+so a custom style must be applied to fit the look and feel of the application.
 
 This directive attaches a `ngx-formcontrol-errors` component as siblings of the `input` elements,
 styles to those components can be applied globally in the `styles.scss` of the application

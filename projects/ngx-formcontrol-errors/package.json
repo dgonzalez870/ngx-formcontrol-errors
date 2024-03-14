@@ -4,13 +4,14 @@
   "description": "A directive for showing errors in Angular form controls on reactive forms",
   "keywords": [
     "angular",
-    "form",
     "control",
-    "errors",
-    "reactive",
-    "forms",
+    "directive",
+    "error",
+    "error messages",
+    "form",
     "formcontrol",
-    "directive"
+    "messages",
+    "reactive"
   ],
   "license": "MIT",
   "author": {
