@@ -1,0 +1,10 @@
+:host {
+  flex: 1;
+  border-style: solid;
+  border-color: azure;
+  padding: 1rem;
+
+  .code-section-title {
+    font-weight: bold;
+  }
+}
