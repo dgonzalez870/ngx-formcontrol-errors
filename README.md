@@ -101,6 +101,169 @@ export const appConfig: ApplicationConfig = {
 };
 ```
 
+## Internationalization (I18N)
+
+### 1. Angular I18N
+
+If the application uses [Angular Internationalization](https://angular.io/guide/i18n-overview),
+`FORM_ERROR_MESSAGES_PROVIDER` could be provided using `$localize` after adding all necessary settings for
+**Angular I18N**
+
+```typescript
+export const appConfig: ApplicationConfig = {
+  providers: [
+    ...
+    {
+      provide: FORM_ERROR_MESSAGES_PROVIDER,
+      useValue: {
+        required: $localize `This field is required`,
+        min: $localize `The minimun allowed values is {{value}}`,
+        max: $localize `The max allowed value is {{value}}`,
+        minlength: $localize `The minimun allowed length is {{value}}`,
+        maxlength: $localize `The max allowed length is {{value}}`,
+        email: $localize `Invalid email`,
+        pattern: $localize `Invalid pattern`,
+      },
+    },
+    ...
+  ],
+};
+```
+
+### 2. NGX-TRANSLATE
+
+If the application uses [ngx-translate](https://github.com/ngx-translate/core), the following settings are required:
+
+1. Install the [message parser service for `ngx-translate`](https://www.npmjs.com/package/ngx-formcontrol-msgs-translate-parser)
+
+```sh
+npm install --save ngx-formcontrol-msgs-translate-parser
+```
+
+2. Provide `ERROR_MSG_PARSER` in `ApplicationConfig` using class `NgxTranslateMsgParserService`
+
+```typescript
+export const appConfig: ApplicationConfig = {
+  providers: [
+    ...
+    {
+      provide: ERROR_MSG_PARSER,
+      useClass: NgxTranslateMsgParserService,
+    },
+    ...
+  ],
+};
+```
+
+3. Add the messages in the locale file of each language (as usual for `ngx-translate`)
+
+**English (en.json)**
+
+```json
+{
+  ...
+  "FORM_ERROR_MESSAGES": {
+    "REQUIRED": "This field is required",
+    "MIN": "The minimun allowed values is {{value}}",
+    "MAX": "The max allowed value is {{value}}",
+    "MINLENGTH": "The minimun allowed length is {{value}}",
+    "MAXLENGTH": "The max allowed length is {{value}}",
+    "EMAIL": "Invalid email",
+    "PATTERN": "Invalid pattern",
+    "CUSTOM": "Ups, something went wrong",
+    ...
+  }
+  ...
+}
+```
+
+**Spanish (es.json)**
+
+```json
+{
+  ...
+  "FORM_ERROR_MESSAGES": {
+    "REQUIRED": "Este campo es obligatorio",
+    "MIN": "El mínimo valor permitido es {{value}}",
+    "MAX": "El máximo valor permitido es {{value}}",
+    "MINLENGTH": "El mínimo número de caracteres es {{value}}",
+    "MAXLENGTH": "El máximo número de caracteres es {{value}}",
+    "EMAIL": "Email inválido",
+    "PATTERN": "Entrada inválida",
+    "CUSTOM": "Ups, Algo salió mal",
+    ...
+  }
+  ...
+}
+```
+
+4. Provide `FORM_ERROR_MESSAGES_PROVIDER` referencing the values in the locale files
+
+```typescript
+export const appConfig: ApplicationConfig = {
+  providers: [
+    ...
+    {
+      provide: FORM_ERROR_MESSAGES_PROVIDER,
+      useValue: {
+        required: "FORM_ERROR_MESSAGES.REQUIRED",
+        min: "FORM_ERROR_MESSAGES.MIN",
+        max: "FORM_ERROR_MESSAGES.MAX",
+        minlength: "FORM_ERROR_MESSAGES.MINLENGTH",
+        maxlength: "FORM_ERROR_MESSAGES.MAXLENGTH",
+        email: "FORM_ERROR_MESSAGES.EMAIL",
+        pattern: "FORM_ERROR_MESSAGES.PATTERN",
+        custom: "FORM_ERROR_MESSAGES.CUSTOM",
+        ...
+      },
+    },
+    ...
+  ],
+};
+```
+
+### 3. Other I18N methods
+
+If the application uses I18N methods other than [NGX-TRANSLATE](#2-ngx-translate) or [Angular I18N](#1-angular-i18n), a custom parser must be created
+
+1. Create a class or service that implements `ErrorMsgParser` and override the method `parse` to return customized translations that could reliy on a custom I18N service
+
+```typescript
+
+@Injectable({
+  ...
+})
+export class CustomMsgParserService implements ErrorMsgParser {
+  constructor(
+    private readonly i18nService: CustomI18NService,
+    @Inject(FORM_ERROR_MESSAGES_PROVIDER)
+    private customErrorMessages: KeyValueObject
+  ) {}
+
+  parse(error: ValidationErrors): string {
+    ...
+    // Develop the logic to translate `customErrorMessages` using `CustomI18NService`
+    ...
+  }
+}
+
+```
+
+2. Provide `ERROR_MSG_PARSER` in `ApplicationConfig` using the custom class created in the previous step.
+
+```typescript
+export const appConfig: ApplicationConfig = {
+  providers: [
+    ...
+    {
+      provide: ERROR_MSG_PARSER,
+      useClass: CustomMsgParserService,
+    },
+    ...
+  ],
+};
+```
+
 ## Styling
 
 This module does not provide any CSS stylesheet or settings,

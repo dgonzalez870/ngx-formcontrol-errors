@@ -167,6 +167,48 @@
           }
         }
       }
+    },
+    "ngx-formcontrol-msgs-translate-parser": {
+      "projectType": "library",
+      "root": "projects/ngx-formcontrol-msgs-translate-parser",
+      "sourceRoot": "projects/ngx-formcontrol-msgs-translate-parser/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-formcontrol-msgs-translate-parser/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-formcontrol-msgs-translate-parser/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-formcontrol-msgs-translate-parser/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/ngx-formcontrol-msgs-translate-parser/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/ngx-formcontrol-msgs-translate-parser/**/*.ts",
+              "projects/ngx-formcontrol-msgs-translate-parser/**/*.html"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

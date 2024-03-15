@@ -13,6 +13,9 @@
     "paths": {
       "ngx-formcontrol-errors": [
         "./dist/ngx-formcontrol-errors"
+      ],
+      "ngx-formcontrol-msgs-translate-parser": [
+        "./dist/ngx-formcontrol-msgs-translate-parser"
       ]
     },
     "esModuleInterop": true,
