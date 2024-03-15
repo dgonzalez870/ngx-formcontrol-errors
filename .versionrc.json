@@ -45,6 +45,10 @@
     {
       "filename": "projects/ngx-formcontrol-errors/package.json",
       "type": "json"
+    },
+    {
+      "filename": "projects/ngx-formcontrol-msgs-translate-parser/package.json",
+      "type": "json"
     }
   ]
 }
