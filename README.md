@@ -101,6 +101,109 @@ export const appConfig: ApplicationConfig = {
 };
 ```
 
+## Internationalization (I18N)
+
+### 1. Angular I18N
+
+If the application uses [Angular Internationalization](https://angular.io/guide/i18n-overview),
+`FORM_ERROR_MESSAGES_PROVIDER` could be provided using `$localize` after adding all necessary settings for
+**Angular I18N**
+
+```typescript
+export const appConfig: ApplicationConfig = {
+  providers: [
+    ...
+    {
+      provide: FORM_ERROR_MESSAGES_PROVIDER,
+      useValue: {
+        required: $localize `This field is required`,
+        min: $localize `The minimun allowed values is {{value}}`,
+        max: $localize `The max allowed value is {{value}}`,
+        minlength: $localize `The minimun allowed length is {{value}}`,
+        maxlength: $localize `The max allowed length is {{value}}`,
+        email: $localize `Invalid email`,
+        pattern: $localize `Invalid pattern`,
+      },
+    },
+    ...
+  ],
+};
+```
+
+### 2. NGX-TRANSLATE
+
+If the application uses [ngx-translate](https://github.com/ngx-translate/core), the following settings are required:
+
+1. Add the messages in the locale file of each language
+
+__English (en.json)__
+
+```json
+{
+  ...
+  "FORM_ERROR_MESSAGES": {
+    "REQUIRED": "This field is required",
+    "MIN": "The minimun allowed values is {{value}}",
+    "MAX": "The max allowed value is {{value}}",
+    "MINLENGTH": "The minimun allowed length is {{value}}",
+    "MAXLENGTH": "The max allowed length is {{value}}",
+    "EMAIL": "Invalid email",
+    "PATTERN": "Invalid pattern",
+    "CUSTOM": "Ups, something went wrong",
+    ...
+  }
+  ...
+}
+```
+
+__Spanish (es.json)__
+
+```json
+{
+  ...
+  "FORM_ERROR_MESSAGES": {
+    "REQUIRED": "Este campo es obligatorio",
+    "MIN": "El mínimo valor permitido es {{value}}",
+    "MAX": "El máximo valor permitido es {{value}}",
+    "MINLENGTH": "El mínimo número de caracteres es {{value}}",
+    "MAXLENGTH": "El máximo número de caracteres es {{value}}",
+    "EMAIL": "Email inválido",
+    "PATTERN": "Entrada inválida",
+    "CUSTOM": "Ups, Algo salió mal",
+    ...
+  }
+  ...
+}
+```
+
+2. Provide `FORM_ERROR_MESSAGES_PROVIDER` referencing the values in the locale files
+
+```typescript
+export const appConfig: ApplicationConfig = {
+  providers: [
+    ...
+    {
+      provide: FORM_ERROR_MESSAGES_PROVIDER,
+      useValue: {
+        required: "FORM_ERROR_MESSAGES.REQUIRED",
+        min: "FORM_ERROR_MESSAGES.MIN",
+        max: "FORM_ERROR_MESSAGES.MAX",
+        minlength: "FORM_ERROR_MESSAGES.MINLENGTH",
+        maxlength: "FORM_ERROR_MESSAGES.MAXLENGTH",
+        email: "FORM_ERROR_MESSAGES.EMAIL",
+        pattern: "FORM_ERROR_MESSAGES.PATTERN",
+        custom: "FORM_ERROR_MESSAGES.CUSTOM",
+        ...
+      },
+    },
+    ...
+  ],
+};
+```
+
+
+
+
 ## Styling
 
 This module does not provide any CSS stylesheet or settings,
