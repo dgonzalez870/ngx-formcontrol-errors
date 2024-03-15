@@ -20,13 +20,7 @@ export class NgxTranslateMsgParserService implements ErrorMsgParser {
 
   parse(error: ValidationErrors): string {
     const { key, value } = validationErrors2KeyValue(error)[0];
-    const message = this.errorMessageParserService.errorMessageParser(
-      key,
-      null
-    );
-    const translatedMessage = this.translateService.instant(message);
-    return translatedMessage
-      .trim()
-      .replace('{{value}}', (value ?? '').toString());
+    const message = this.errorMessageParserService.getMessageByKey(key);
+    return this.translateService.instant(message, { value });
   }
 }

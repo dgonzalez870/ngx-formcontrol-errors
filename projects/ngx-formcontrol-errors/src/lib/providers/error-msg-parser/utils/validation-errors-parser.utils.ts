@@ -6,15 +6,20 @@ export function validationErrors2KeyValue(
   const errorKeys = Object.keys(error);
   return errorKeys.map((keyError) => {
     let val = null;
+    const errorData = error[keyError];
+
+    if (typeof errorData !== 'object') {
+      return { key: keyError, value: errorData };
+    }
     switch (keyError) {
       case 'minlength':
-        val = error[keyError].requiredLength;
+        val = errorData.requiredLength;
         break;
       case 'maxlength':
-        val = error[keyError].requiredLength;
+        val = errorData.requiredLength;
         break;
       default:
-        val = error[keyError][keyError];
+        val = errorData[keyError];
         break;
     }
     return { key: keyError, value: val };

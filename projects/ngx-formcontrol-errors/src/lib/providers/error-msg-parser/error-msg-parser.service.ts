@@ -27,8 +27,12 @@ export class ErrorMsgParserService implements ErrorMsgParser {
     };
   }
 
+  getMessageByKey(key: string): string {
+    return this.errorMessages[key];
+  }
+
   errorMessageParser(errorKey: string, value: string | number | null): string {
-    const message = this.errorMessages[errorKey];
+    const message = this.getMessageByKey(errorKey);
     if (!message) {
       throw new Error(`Error message for ${errorKey} not found`);
     }
