@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.1-3](https://github.com/dgonzalez870/ngx-formcontrol-errors/compare/v0.0.1-2...v0.0.1-3) (2024-03-15)
+
+
+### Features
+
+* add I18N support ([#9](https://github.com/dgonzalez870/ngx-formcontrol-errors/issues/9)) ([c6d07b6](https://github.com/dgonzalez870/ngx-formcontrol-errors/commit/c6d07b68d2609b0389c8facf02e97f7998a9c3fd))
+
 ## [0.0.1-2](https://github.com/dgonzalez870/ngx-formcontrol-errors/compare/v0.0.1-1...v0.0.1-2) (2024-03-14)
 
 
