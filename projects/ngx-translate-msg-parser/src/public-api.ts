@@ -3,4 +3,3 @@
  */
 
 export * from './lib/ngx-translate-msg-parser.service';
-export * from './lib/ngx-translate-msg-parser.component';
