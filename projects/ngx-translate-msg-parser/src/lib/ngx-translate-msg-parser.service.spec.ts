@@ -16,11 +16,33 @@ describe('NgxTranslateMsgParserService', () => {
       providers: [
         {
           provide: TranslateService,
-          useValue: {},
+          useValue: {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            instant: (key: string, interpolateParams?: any): string => {
+              const translations: { [key: string]: string } = {
+                'error.required': 'Required property',
+                'error.min': 'Min allowed values is {{value}}',
+              };
+
+              return translations[key].replace(
+                '{{value}}',
+                interpolateParams?.value
+              );
+            },
+          },
         },
         {
           provide: ErrorMsgParserService,
-          useValue: {},
+          useValue: {
+            getMessageByKey: (key: string): string => {
+              const Messages: { [key: string]: string } = {
+                required: 'error.required',
+                min: 'error.min',
+              };
+
+              return Messages[key];
+            },
+          },
         },
       ],
     });
@@ -29,5 +51,16 @@ describe('NgxTranslateMsgParserService', () => {
 
   it('should be created', () => {
     expect(service).toBeTruthy();
+  });
+
+  it('should parse error message', () => {
+    const message = service.parse({
+      min: {
+        min: 10,
+        actualValue: 5,
+      },
+    });
+
+    expect(message).toEqual('Min allowed values is 10');
   });
 });
