@@ -167,6 +167,48 @@
           }
         }
       }
+    },
+    "ngx-translate-msg-parser": {
+      "projectType": "library",
+      "root": "projects/ngx-translate-msg-parser",
+      "sourceRoot": "projects/ngx-translate-msg-parser/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-translate-msg-parser/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-translate-msg-parser/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-translate-msg-parser/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/ngx-translate-msg-parser/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/ngx-translate-msg-parser/**/*.ts",
+              "projects/ngx-translate-msg-parser/**/*.html"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

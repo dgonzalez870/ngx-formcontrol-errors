@@ -1,0 +1,319 @@
+{
+  "version": "6.0",
+  "nxVersion": "17.2.8",
+  "deps": {
+    "@angular/animations": "^17.2.0",
+    "@angular/common": "^17.2.0",
+    "@angular/compiler": "^17.2.0",
+    "@angular/core": "^17.2.0",
+    "@angular/forms": "^17.2.0",
+    "@angular/platform-browser": "^17.2.0",
+    "@angular/platform-browser-dynamic": "^17.2.0",
+    "@angular/router": "^17.2.0",
+    "highlight.js": "^11.9.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.14.3",
+    "@angular-devkit/build-angular": "^17.2.3",
+    "@angular-eslint/builder": "17.2.1",
+    "@angular-eslint/eslint-plugin": "17.2.1",
+    "@angular-eslint/eslint-plugin-template": "17.2.1",
+    "@angular-eslint/schematics": "17.2.1",
+    "@angular-eslint/template-parser": "17.2.1",
+    "@angular/cli": "^17.2.3",
+    "@angular/compiler-cli": "^17.2.0",
+    "@commitlint/cli": "^19.0.3",
+    "@commitlint/config-conventional": "^19.0.3",
+    "@types/jasmine": "~5.1.0",
+    "@typescript-eslint/eslint-plugin": "6.19.0",
+    "@typescript-eslint/parser": "6.19.0",
+    "commit-and-tag-version": "^12.2.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-tsdoc": "^0.2.17",
+    "husky": "^9.0.11",
+    "jasmine-core": "~5.1.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "ng-packagr": "^17.2.0",
+    "typedoc": "^0.25.12",
+    "typescript": "~5.3.2"
+  },
+  "pathMappings": {
+    "ngx-formcontrol-errors": [
+      "./dist/ngx-formcontrol-errors"
+    ]
+  },
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "projectFileMap": {},
+    "nonProjectFiles": [
+      {
+        "file": ".commitlintrc.json",
+        "hash": "9315613328036233564"
+      },
+      {
+        "file": ".editorconfig",
+        "hash": "6686520031028425313"
+      },
+      {
+        "file": ".eslintrc.json",
+        "hash": "15134739058741970448"
+      },
+      {
+        "file": ".github/workflows/static.yml",
+        "hash": "15004154428689492650"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "13044518069027839699"
+      },
+      {
+        "file": ".husky/commit-msg",
+        "hash": "8529284403022371614"
+      },
+      {
+        "file": ".husky/pre-commit",
+        "hash": "11157005088957879281"
+      },
+      {
+        "file": ".versionrc.json",
+        "hash": "1240812855813213836"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "5331566439708925252"
+      },
+      {
+        "file": ".vscode/launch.json",
+        "hash": "17038929134016848735"
+      },
+      {
+        "file": ".vscode/tasks.json",
+        "hash": "5336636969995539451"
+      },
+      {
+        "file": "CHANGELOG.md",
+        "hash": "6263335025780441143"
+      },
+      {
+        "file": "LICENSE",
+        "hash": "6367880545360789329"
+      },
+      {
+        "file": "README.md",
+        "hash": "9310628128135932695"
+      },
+      {
+        "file": "angular.json",
+        "hash": "13233150584799285239"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "1929645359607442392"
+      },
+      {
+        "file": "package.json",
+        "hash": "15055956199932412848"
+      },
+      {
+        "file": "projects/ngx-formcontrol-errors/.eslintrc.json",
+        "hash": "4333792240971698148"
+      },
+      {
+        "file": "projects/ngx-formcontrol-errors/README.md",
+        "hash": "7146927796988250624"
+      },
+      {
+        "file": "projects/ngx-formcontrol-errors/ng-package.json",
+        "hash": "17495890279327203405"
+      },
+      {
+        "file": "projects/ngx-formcontrol-errors/package.json",
+        "hash": "4160156563639674234"
+      },
+      {
+        "file": "projects/ngx-formcontrol-errors/src/lib/data/index.ts",
+        "hash": "16096322306312051384"
+      },
+      {
+        "file": "projects/ngx-formcontrol-errors/src/lib/data/messages.ts",
+        "hash": "15714926642522369151"
+      },
+      {
+        "file": "projects/ngx-formcontrol-errors/src/lib/formcontrol-errors.directive.spec.ts",
+        "hash": "13014990119026946121"
+      },
+      {
+        "file": "projects/ngx-formcontrol-errors/src/lib/formcontrol-errors.directive.ts",
+        "hash": "11925997851115929413"
+      },
+      {
+        "file": "projects/ngx-formcontrol-errors/src/lib/ngx-formcontrol-errors.component.spec.ts",
+        "hash": "7365013339331474592"
+      },
+      {
+        "file": "projects/ngx-formcontrol-errors/src/lib/ngx-formcontrol-errors.component.ts",
+        "hash": "5608895581354946760"
+      },
+      {
+        "file": "projects/ngx-formcontrol-errors/src/lib/providers/error-msg-parser/error-msg-parser-token.ts",
+        "hash": "14390822219089848929"
+      },
+      {
+        "file": "projects/ngx-formcontrol-errors/src/lib/providers/error-msg-parser/error-msg-parser.service.spec.ts",
+        "hash": "11286458790733790478"
+      },
+      {
+        "file": "projects/ngx-formcontrol-errors/src/lib/providers/error-msg-parser/error-msg-parser.service.ts",
+        "hash": "10269762485622550697"
+      },
+      {
+        "file": "projects/ngx-formcontrol-errors/src/lib/providers/error-msg-parser/error-msg-parser.ts",
+        "hash": "15718537256346491770"
+      },
+      {
+        "file": "projects/ngx-formcontrol-errors/src/lib/providers/error-msg-parser/index.ts",
+        "hash": "15901926935975735986"
+      },
+      {
+        "file": "projects/ngx-formcontrol-errors/src/lib/providers/messages/index.ts",
+        "hash": "8302939454123333896"
+      },
+      {
+        "file": "projects/ngx-formcontrol-errors/src/lib/providers/messages/messages-provider-token.ts",
+        "hash": "8289404339409177054"
+      },
+      {
+        "file": "projects/ngx-formcontrol-errors/src/lib/types/index.ts",
+        "hash": "10523067720468014609"
+      },
+      {
+        "file": "projects/ngx-formcontrol-errors/src/lib/types/key-value-object.ts",
+        "hash": "11869826980917468485"
+      },
+      {
+        "file": "projects/ngx-formcontrol-errors/src/public-api.ts",
+        "hash": "9564587952506896468"
+      },
+      {
+        "file": "projects/ngx-formcontrol-errors/tsconfig.lib.json",
+        "hash": "12369024473565967613"
+      },
+      {
+        "file": "projects/ngx-formcontrol-errors/tsconfig.lib.prod.json",
+        "hash": "1939170332703490951"
+      },
+      {
+        "file": "projects/ngx-formcontrol-errors/tsconfig.spec.json",
+        "hash": "11730399207539946696"
+      },
+      {
+        "file": "src/app/app.component.html",
+        "hash": "10930960204641110948"
+      },
+      {
+        "file": "src/app/app.component.scss",
+        "hash": "1728756597779173152"
+      },
+      {
+        "file": "src/app/app.component.spec.ts",
+        "hash": "9307340761991836845"
+      },
+      {
+        "file": "src/app/app.component.ts",
+        "hash": "13967012287509285597"
+      },
+      {
+        "file": "src/app/app.config.ts",
+        "hash": "13319401254367716386"
+      },
+      {
+        "file": "src/app/app.routes.ts",
+        "hash": "12397496131277534773"
+      },
+      {
+        "file": "src/app/code-examples/component-code-example.ts",
+        "hash": "10724030749830813943"
+      },
+      {
+        "file": "src/app/code-examples/examples-provider.ts",
+        "hash": "4302852397058836715"
+      },
+      {
+        "file": "src/app/code-examples/styles-code-example.ts",
+        "hash": "11638665490398464297"
+      },
+      {
+        "file": "src/app/code-examples/template-code-example.ts",
+        "hash": "984724831125529373"
+      },
+      {
+        "file": "src/app/source-code-container/source-code-container.component.html",
+        "hash": "12618078156666029105"
+      },
+      {
+        "file": "src/app/source-code-container/source-code-container.component.scss",
+        "hash": "192287923747271643"
+      },
+      {
+        "file": "src/app/source-code-container/source-code-container.component.spec.ts",
+        "hash": "5593097765899514970"
+      },
+      {
+        "file": "src/app/source-code-container/source-code-container.component.ts",
+        "hash": "9493445960083108755"
+      },
+      {
+        "file": "src/app/source-code-section/source-code-section.component.html",
+        "hash": "4094438352354295394"
+      },
+      {
+        "file": "src/app/source-code-section/source-code-section.component.scss",
+        "hash": "3579060680601265448"
+      },
+      {
+        "file": "src/app/source-code-section/source-code-section.component.spec.ts",
+        "hash": "2238379865798649512"
+      },
+      {
+        "file": "src/app/source-code-section/source-code-section.component.ts",
+        "hash": "14360218695158608001"
+      },
+      {
+        "file": "src/assets/.gitkeep",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/favicon.ico",
+        "hash": "3988961587069885523"
+      },
+      {
+        "file": "src/index.html",
+        "hash": "11528957063402152369"
+      },
+      {
+        "file": "src/main.ts",
+        "hash": "4927504514031276065"
+      },
+      {
+        "file": "src/styles.scss",
+        "hash": "5195668842064076916"
+      },
+      {
+        "file": "tsconfig.app.json",
+        "hash": "17337579397915052279"
+      },
+      {
+        "file": "tsconfig.json",
+        "hash": "11147047043506076541"
+      },
+      {
+        "file": "tsconfig.spec.json",
+        "hash": "15575553540147145788"
+      }
+    ]
+  }
+}
