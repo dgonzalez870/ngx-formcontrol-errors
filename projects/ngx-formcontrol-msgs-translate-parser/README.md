@@ -1,24 +1,3 @@
-# NgxTranslateMsgParser
+# Ngx-Formcontrol-msgs-translate-parser
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
-
-## Code scaffolding
-
-Run `ng generate component component-name --project ngx-translate-msg-parser` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-translate-msg-parser`.
-> Note: Don't forget to add `--project ngx-translate-msg-parser` or else it will be added to the default project in your `angular.json` file. 
-
-## Build
-
-Run `ng build ngx-translate-msg-parser` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Publishing
-
-After building your library with `ng build ngx-translate-msg-parser`, go to the dist folder `cd dist/ngx-translate-msg-parser` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test ngx-translate-msg-parser` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+This library provides a service to internationalize messages for [ngx-formcontrol-errors-msgs](https://github.com/dgonzalez870/ngx-formcontrol-errors) using [ngx-translate](https://github.com/ngx-translate/core). More details can be found [here](https://github.com/dgonzalez870/ngx-formcontrol-errors#2-ngx-translate).

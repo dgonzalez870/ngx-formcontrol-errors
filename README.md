@@ -226,7 +226,7 @@ export const appConfig: ApplicationConfig = {
 
 If the application uses I18N methods other than [NGX-TRANSLATE](#2-ngx-translate) or [Angular I18N](#1-angular-i18n), a custom parser must be created
 
-3.1 Create a class or service that implements `ErrorMsgParser` and override the method `parse` to return customized translations that could reliy on a custom I18N service
+1. Create a class or service that implements `ErrorMsgParser` and override the method `parse` to return customized translations that could reliy on a custom I18N service
 
 ```typescript
 
@@ -249,7 +249,7 @@ export class CustomMsgParserService implements ErrorMsgParser {
 
 ```
 
-3.2 Provide `ERROR_MSG_PARSER` in `ApplicationConfig` using the custom class
+2. Provide `ERROR_MSG_PARSER` in `ApplicationConfig` using the custom class created in the previous step.
 
 ```typescript
 export const appConfig: ApplicationConfig = {

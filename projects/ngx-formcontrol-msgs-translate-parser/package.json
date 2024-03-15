@@ -1,6 +1,33 @@
 {
   "name": "ngx-formcontrol-msgs-translate-parser",
   "version": "0.0.1",
+  "description": "A module to internationalize ngx-formcontrol-errors-msgs using ngx-translate",
+  "keywords": [
+    "angular",
+    "control",
+    "error",
+    "error messages",
+    "form",
+    "formcontrol",
+    "i18n",
+    "messages",
+    "ngx-formcontrol-errors-msgs",
+    "ngx-translate",
+    "translate"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Dennys González",
+    "email": "dgonzalez870@yahoo.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dgonzalez870/ngx-formcontrol-errors"
+  },
+  "homepage": "https://github.com/dgonzalez870/ngx-formcontrol-errors",
+  "bugs": {
+    "url": "https://github.com/dgonzalez870/ngx-formcontrol-errors/issues"
+  },
   "peerDependencies": {
     "@angular/common": "^17.2.0",
     "@angular/core": "^17.2.0"
