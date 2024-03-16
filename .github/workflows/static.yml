@@ -40,12 +40,18 @@ jobs:
           node-version: 18 # optional
       - name: Install dependencies
         run: npm i
-      - name: Library build
-        run: npx ng build ngx-formcontrol-errors
-      - name: Build
-        run: npx ng build -c github-pages
-      - name: Test
-        run: npx ng test --no-watch --no-progress --browsers=ChromeHeadless
+      - name: Test core library
+        run: npm run test:core
+      - name: Build core library
+        run: npm run build:core
+      - name: Test translate library
+        run: npm run test:translate
+      - name: Build translate library
+        run: npm run build:translate
+      - name: Test main app
+        run: npm run test
+      - name: Build main app
+        run: npm run build:github-pages
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
