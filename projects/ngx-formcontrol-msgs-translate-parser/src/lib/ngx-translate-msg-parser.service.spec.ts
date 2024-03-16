@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ErrorMsgParserService } from 'ngx-formcontrol-errors';
+import { ErrorMsgParserService } from 'ngx-formcontrol-errors-msgs';
 
 import { TranslateService } from '@ngx-translate/core';
 

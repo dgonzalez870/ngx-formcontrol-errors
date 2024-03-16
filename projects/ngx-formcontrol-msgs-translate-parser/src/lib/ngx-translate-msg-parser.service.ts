@@ -5,7 +5,7 @@ import {
   ErrorMsgParser,
   ErrorMsgParserService,
   validationErrors2KeyValue,
-} from 'ngx-formcontrol-errors';
+} from 'ngx-formcontrol-errors-msgs';
 
 import { TranslateService } from '@ngx-translate/core';
 
