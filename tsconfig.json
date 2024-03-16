@@ -11,8 +11,8 @@
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "paths": {
-      "ngx-formcontrol-errors": [
-        "./dist/ngx-formcontrol-errors"
+      "ngx-formcontrol-errors-msgs": [
+        "./dist/ngx-formcontrol-errors-msgs"
       ],
       "ngx-formcontrol-msgs-translate-parser": [
         "./dist/ngx-formcontrol-msgs-translate-parser"

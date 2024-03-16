@@ -1,7 +1,7 @@
 import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
-import { FORM_ERROR_MESSAGES_PROVIDER } from 'ngx-formcontrol-errors';
+import { FORM_ERROR_MESSAGES_PROVIDER } from 'ngx-formcontrol-errors-msgs';
 
 import { routes } from './app.routes';
 

@@ -5,7 +5,7 @@ import {
   Validators,
 } from '@angular/forms';
 
-import { FormcontrolErrorsDirective } from 'ngx-formcontrol-errors';
+import { FormcontrolErrorsDirective } from 'ngx-formcontrol-errors-msgs';
 
 import {
   SourceCodeContainerComponent,

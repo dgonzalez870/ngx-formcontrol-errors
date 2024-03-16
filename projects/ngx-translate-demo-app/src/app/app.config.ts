@@ -10,7 +10,7 @@ import {
 import {
   ERROR_MSG_PARSER,
   FORM_ERROR_MESSAGES_PROVIDER,
-} from 'ngx-formcontrol-errors';
+} from 'ngx-formcontrol-errors-msgs';
 import {
   NgxTranslateMsgParserService,
 } from 'ngx-formcontrol-msgs-translate-parser';
