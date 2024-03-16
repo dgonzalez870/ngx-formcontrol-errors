@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.1-4](https://github.com/dgonzalez870/ngx-formcontrol-errors/compare/v0.0.1-3...v0.0.1-4) (2024-03-16)
+
+
+### Bug Fixes
+
+* **ngx-formcontrol-msgs-translate-parser:** wrong import `ngx-formcontrol-errros` ([c6b5196](https://github.com/dgonzalez870/ngx-formcontrol-errors/commit/c6b519659f9482238db97b540bf42f4601a09018))
+
 ## [0.0.1-3](https://github.com/dgonzalez870/ngx-formcontrol-errors/compare/v0.0.1-2...v0.0.1-3) (2024-03-15)
 
 
