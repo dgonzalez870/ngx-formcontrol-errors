@@ -3,20 +3,27 @@
     <div class="left-side">
       <h1>{{ title }}</h1>
 
-      <p>Angular directive to easily show errors in form controls</p>
+      <p [innerHTML]="'APP_DESCRIPTION' | translate"></p>
 
       <div class="form-container">
         <form [formGroup]="form">
           <div class="form-row">
-            <label for="name">Name</label>
+            <label for="name">{{ "FORM_LABELS.NAME" | translate }}</label>
             <input type="text" formControlName="name" ngxFormcontrolErrors />
           </div>
           <div class="form-row">
-            <label for="name">Email</label>
+            <label for="email">{{ "FORM_LABELS.EMAIL" | translate }}</label>
             <input type="email" formControlName="email" ngxFormcontrolErrors />
           </div>
         </form>
-        <button (click)="reset()">Reset Form</button>
+        <button (click)="reset()">
+          {{ "FORM_LABELS.RESET_FORM" | translate }}
+        </button>
+
+        <select name="language" id="language" (change)="changeLang($event)">
+          <option value="en">English</option>
+          <option value="es" selected>Español</option>
+        </select>
       </div>
     </div>
   </div>

@@ -1,4 +1,10 @@
 {
+  "APP_DESCRIPTION": "This example shows the results of integrating <b>ngx-form-control-errors-msgs</b> with <b>ngx-translate</b>. Choose a language.",
+  "FORM_LABELS": {
+    "EMAIL": "Email",
+    "NAME": "Name",
+    "RESET_FORM": "Reset form"
+  },
   "FORM_ERROR_MESSAGES": {
     "REQUIRED": "This field is required",
     "MIN": "The minimun allowed values is {{value}}",

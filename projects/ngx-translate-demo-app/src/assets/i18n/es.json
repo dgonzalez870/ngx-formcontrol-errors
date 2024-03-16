@@ -1,11 +1,17 @@
 {
+  "APP_DESCRIPTION": "Este ejemplo presenta los resultados de integrar <b>ngx-form-control-errors-msgs</b> con <b>ngx-translate</b>. Seleccione un idioma.",
+  "FORM_LABELS": {
+    "EMAIL": "Correo Electrónico",
+    "NAME": "Nombre",
+    "RESET_FORM": "Reiniciar formulario"
+  },
   "FORM_ERROR_MESSAGES": {
     "REQUIRED": "Este campo es obligatorio",
     "MIN": "El mínimo valor permitido es {{value}}",
     "MAX": "El máximo valor permitido es {{value}}",
     "MINLENGTH": "El mínimo número de caracteres es {{value}}",
     "MAXLENGTH": "El máximo número de caracteres es {{value}}",
-    "EMAIL": "Email inválido",
+    "EMAIL": "Correo electrónico inválido",
     "PATTERN": "Entrada inválida",
     "CUSTOM": "Ups, Algo salió mal"
   }

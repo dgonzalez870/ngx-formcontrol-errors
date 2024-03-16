@@ -7,13 +7,15 @@ import {
 
 import { FormcontrolErrorsDirective } from 'ngx-formcontrol-errors';
 
+import {
+  TranslateModule,
+  TranslateService,
+} from '@ngx-translate/core';
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    FormcontrolErrorsDirective,
-    ReactiveFormsModule,
-  ],
+  imports: [FormcontrolErrorsDirective, ReactiveFormsModule, TranslateModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -25,9 +27,18 @@ export class AppComponent {
     email: ['', [Validators.required, Validators.email]],
   });
 
-  constructor(private readonly formBuilder: FormBuilder) {}
+  constructor(
+    private readonly formBuilder: FormBuilder,
+    private readonly translateService: TranslateService
+  ) {}
 
   reset(): void {
     this.form.reset();
+  }
+
+  changeLang(event: Event): void {
+    const target = event.target as HTMLSelectElement;
+    const lang = target.value;
+    this.translateService.use(lang);
   }
 }
