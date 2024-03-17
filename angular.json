@@ -339,6 +339,15 @@
       "root": "projects/angular-i18n-demo",
       "sourceRoot": "projects/angular-i18n-demo/src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "es-ES": {
+            "translation": "projects/angular-i18n-demo/src/assets/i18n/messages.es.xlf",
+            "baseHref": "/es/"
+          }
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
