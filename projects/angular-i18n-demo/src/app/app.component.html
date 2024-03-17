@@ -1,0 +1,28 @@
+<main class="main">
+  <div class="content">
+    <div class="left-side">
+      <h1>{{ title }}</h1>
+
+      <p [innerHTML]="description"></p>
+
+      <div class="form-container">
+        <form [formGroup]="form">
+          <div class="form-row">
+            <label for="name" i18n>Name</label>
+            <input type="text" formControlName="name" ngxFormcontrolErrors />
+          </div>
+          <div class="form-row">
+            <label for="email" i18n>Email</label>
+            <input type="email" formControlName="email" ngxFormcontrolErrors />
+          </div>
+        </form>
+        <button (click)="reset()" i18n>Reset form</button>
+
+        <select name="language" id="language" (change)="changeLang($event)">
+          <option value="en">English</option>
+          <option value="es" selected>Español</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</main>

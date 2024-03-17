@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="8953033926734869941" datatype="html">
+        <source>Name</source>
+        <target>Nombre</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-i18n-demo/src/app/app.component.html</context>
+          <context context-type="linenumber">11,12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4768749765465246664" datatype="html">
+        <source>Email</source>
+        <target>Correo Electrónico</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-i18n-demo/src/app/app.component.html</context>
+          <context context-type="linenumber">15,16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9144388092572424640" datatype="html">
+        <source>Reset form</source>
+        <target>Reiniciar formulario</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-i18n-demo/src/app/app.component.html</context>
+          <context context-type="linenumber">19,21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3836834712265904401" datatype="html">
+        <source>This example shows the results of integrating
+    &lt;b&gt;ngx-form-control-errors-msgs&lt;/b&gt; with &lt;b&gt;Angular I18N&lt;/b&gt;.
+     Choose a language.
+  </source>
+        <target>este ejemplo presenta los resultados de integración con Angular I18N</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-i18n-demo/src/app/app.component.ts</context>
+          <context context-type="linenumber">19,22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2501969335659826225" datatype="html">
+        <source>This field is required</source>
+        <target>este campo es obligatorio</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-i18n-demo/src/app/app.config.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2096407738062347939" datatype="html">
+        <source>The minimun allowed values is {{value}}</source>
+        <target>El valor mínimo permitido es {{value}}</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-i18n-demo/src/app/app.config.ts</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8535928398831740915" datatype="html">
+        <source>The max allowed value is {{value}}</source>
+        <target>El valor máximo permitido es {{value}}</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-i18n-demo/src/app/app.config.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8911639506690086844" datatype="html">
+        <source>The minimun allowed length is {{value}}</source>
+        <target>La mínima cantidad de caracteres es {{value}}</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-i18n-demo/src/app/app.config.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3011718161717240991" datatype="html">
+        <source>The max allowed length is {{value}}</source>
+        <target>La máxima cantidad de caracteres es {{value}}</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-i18n-demo/src/app/app.config.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1140599166278569579" datatype="html">
+        <source>Invalid email</source>
+        <target>Correo inválido</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-i18n-demo/src/app/app.config.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1197382251759457717" datatype="html">
+        <source>Invalid pattern</source>
+        <target>Entrada inválida</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-i18n-demo/src/app/app.config.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
