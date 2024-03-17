@@ -35,6 +35,9 @@ export class AppComponent {
   changeLang(event: Event): void {
     const target = event.target as HTMLSelectElement;
     const lang = target.value;
-    console.log(lang);
+    console.log({
+      lang,
+      href: location.href,
+    });
   }
 }

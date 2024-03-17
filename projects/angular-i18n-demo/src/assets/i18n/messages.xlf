@@ -25,7 +25,7 @@
       </trans-unit>
       <trans-unit id="3836834712265904401" datatype="html">
         <source>This example shows the results of integrating
-    &lt;b&gt;ngx-form-control-errors-msgs&lt;/b&gt; with &lt;b&gt;ngx-translate&lt;/b&gt;.
+    &lt;b&gt;ngx-form-control-errors-msgs&lt;/b&gt; with &lt;b&gt;Angular I18N&lt;/b&gt;.
      Choose a language.
   </source>
         <context-group purpose="location">
