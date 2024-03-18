@@ -1,0 +1,13 @@
+{
+  "packages": {
+    ".": {
+      "release-type": "node"
+    },
+    "projects/ngx-formcontrol-errors-msgs": {
+      "release-type": "node"
+    },
+    "projects/ngx-formcontrol-msgs-translate-parser": {
+      "release-type": "node"
+    }
+  }
+}
