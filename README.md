@@ -90,7 +90,7 @@ export const appConfig: ApplicationConfig = {
       provide: FORM_ERROR_MESSAGES_PROVIDER,
       useValue: {
         // This message will override the default message
-        required: "This is a required field",
+        required: "This is a <b>required</b> field",
         // This is a message for a custom validator and will extend the default
         // messages
         myCustomValidation: "There is an error",
@@ -100,6 +100,8 @@ export const appConfig: ApplicationConfig = {
   ],
 };
 ```
+
+HTML tags are allowed.
 
 ## Internationalization (I18N)
 
