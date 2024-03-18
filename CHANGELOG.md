@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.0-0](https://github.com/dgonzalez870/ngx-formcontrol-errors/compare/v0.0.1-0...v0.1.0-0) (2024-03-18)
+
+
+### Features
+
+* add I18N support ([#9](https://github.com/dgonzalez870/ngx-formcontrol-errors/issues/9)) ([c6d07b6](https://github.com/dgonzalez870/ngx-formcontrol-errors/commit/c6d07b68d2609b0389c8facf02e97f7998a9c3fd))
+* **ngx-formcontrol-errors-msgs:** allow HTML tags in error messages ([#15](https://github.com/dgonzalez870/ngx-formcontrol-errors/issues/15)) ([ffa65fb](https://github.com/dgonzalez870/ngx-formcontrol-errors/commit/ffa65fb847d38208ebf92f28b6a28b5c94869d44))
+
+
+### Bug Fixes
+
+* hide validation errors on disabled controls ([#7](https://github.com/dgonzalez870/ngx-formcontrol-errors/issues/7)) ([dc74945](https://github.com/dgonzalez870/ngx-formcontrol-errors/commit/dc74945249b8f2c6f0c558bcbf6db58b3200ebf7))
+* **ngx-formcontrol-msgs-translate-parser:** wrong import `ngx-formcontrol-errros` ([c6b5196](https://github.com/dgonzalez870/ngx-formcontrol-errors/commit/c6b519659f9482238db97b540bf42f4601a09018))
+
 ## [0.0.1-4](https://github.com/dgonzalez870/ngx-formcontrol-errors/compare/v0.0.1-3...v0.0.1-4) (2024-03-16)
 
 
