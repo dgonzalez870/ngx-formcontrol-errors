@@ -1,4 +1,9 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  TestBed,
+} from '@angular/core/testing';
+
+import { TranslateModule } from '@ngx-translate/core';
 
 import { ErrorMsgTranslateComponent } from './error-msg-translate.component';
 
@@ -8,7 +13,7 @@ describe('ErrorMsgTranslateComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ErrorMsgTranslateComponent]
+      imports: [ErrorMsgTranslateComponent, TranslateModule.forRoot()]
     })
     .compileComponents();
     
