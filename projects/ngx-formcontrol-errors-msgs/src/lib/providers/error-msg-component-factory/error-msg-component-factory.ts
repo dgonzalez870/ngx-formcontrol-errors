@@ -1,5 +1,12 @@
-import { ComponentRef, ViewContainerRef } from '@angular/core';
+import {
+  ComponentRef,
+  ViewContainerRef,
+} from '@angular/core';
 
-export interface ErrorMessageComponentFactory<T> {
-  createComponent: (viewContainerRef: ViewContainerRef) => ComponentRef<T>;
+import { ErrorMsgComponent } from './error-msg-component';
+
+export interface ErrorMessageComponentFactory {
+  createComponent(
+    viewContainerRef: ViewContainerRef
+  ): ComponentRef<ErrorMsgComponent>;
 }

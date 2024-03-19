@@ -21,6 +21,15 @@ import {
   NgxFormcontrolErrorsComponent,
 } from './ngx-formcontrol-errors.component';
 import {
+  ErrorMsgComponent,
+} from './providers/error-msg-component-factory/error-msg-component';
+import {
+  ErrorMessageComponentFactory,
+} from './providers/error-msg-component-factory/error-msg-component-factory';
+import {
+  ERROR_MSG_COMPONENT_FACTORY,
+} from './providers/error-msg-component-factory/error-msg-component-factory-token';
+import {
   ERROR_MSG_PARSER,
   ErrorMsgParser,
   ErrorMsgParserService,
@@ -65,7 +74,7 @@ import {
   standalone: true,
 })
 export class FormcontrolErrorsDirective implements OnInit, OnDestroy {
-  private errorInfoComponent: ComponentRef<NgxFormcontrolErrorsComponent> | null =
+  private errorInfoComponent: ComponentRef<ErrorMsgComponent> | null =
     null;
   private control: AbstractControl | null = null;
   private sub$ = new Subscription();
@@ -88,7 +97,10 @@ export class FormcontrolErrorsDirective implements OnInit, OnDestroy {
     @Optional() private readonly formControl: NgControl,
     @Optional()
     @Inject(ERROR_MSG_PARSER)
-    private readonly customErrorMsgParser: ErrorMsgParser
+    private readonly customErrorMsgParser: ErrorMsgParser,
+    @Optional()
+    @Inject(ERROR_MSG_COMPONENT_FACTORY)
+    private readonly errorMessageComponentFactory?: ErrorMessageComponentFactory
   ) {}
 
   /**
@@ -105,9 +117,16 @@ export class FormcontrolErrorsDirective implements OnInit, OnDestroy {
 
     this.errorParser = this.customErrorMsgParser || this.errorMsgParser;
 
-    this.errorInfoComponent = this.viewContainerRef.createComponent(
-      NgxFormcontrolErrorsComponent
-    );
+    if (this.errorMessageComponentFactory) {
+      this.errorInfoComponent =
+        this.errorMessageComponentFactory.createComponent(
+          this.viewContainerRef
+        );
+    } else {
+      this.errorInfoComponent = this.viewContainerRef.createComponent(
+        NgxFormcontrolErrorsComponent
+      );
+    }
 
     this.sub$.add(
       this.control.statusChanges?.subscribe((status) => {
