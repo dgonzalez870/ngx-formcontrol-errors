@@ -173,6 +173,11 @@
       "root": "projects/ngx-formcontrol-msgs-translate-parser",
       "sourceRoot": "projects/ngx-formcontrol-msgs-translate-parser/src",
       "prefix": "lib",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
