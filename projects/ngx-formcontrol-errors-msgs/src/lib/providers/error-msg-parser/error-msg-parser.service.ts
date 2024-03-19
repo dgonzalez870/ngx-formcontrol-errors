@@ -37,13 +37,17 @@ export class ErrorMsgParserService implements ErrorMsgParser {
     return this.errorMessages[key];
   }
 
-  errorMessageParser(errorKey: string, value: string | number | null): string {
+  errorMessageParser(
+    errorKey: string,
+    valueKey: string,
+    value: string | number | null
+  ): string {
     const message = this.getMessageByKey(errorKey);
     if (!message) {
       throw new Error(`Error message for ${errorKey} not found`);
     }
 
-    return message.trim().replace('{{value}}', (value ?? '').toString());
+    return message.trim().replace(`{{${valueKey}}}`, (value ?? '').toString());
   }
 
   parse(error: ValidationErrors): ErrorMessage[] {
@@ -55,7 +59,7 @@ export class ErrorMsgParserService implements ErrorMsgParser {
       }
 
       return {
-        message: this.errorMessageParser(key, value[valueKey]),
+        message: this.errorMessageParser(key, valueKey, value[valueKey]),
         value,
       };
     });
