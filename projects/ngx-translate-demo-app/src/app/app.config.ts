@@ -12,7 +12,7 @@ import {
   FORM_ERROR_MESSAGES_PROVIDER,
 } from 'ngx-formcontrol-errors-msgs';
 import {
-  ErrorMsgComponentFactoryService,
+  TranslateErrorMsgComponentFactoryService,
 } from 'ngx-formcontrol-msgs-translate-parser';
 
 import {
@@ -42,7 +42,7 @@ export const appConfig: ApplicationConfig = {
     },
     {
       provide: ERROR_MSG_COMPONENT_FACTORY,
-      useClass: ErrorMsgComponentFactoryService,
+      useClass: TranslateErrorMsgComponentFactoryService,
     },
     importProvidersFrom([
       HttpClientModule,

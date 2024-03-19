@@ -13,7 +13,7 @@ import {
 @Injectable({
   providedIn: 'root',
 })
-export class ErrorMsgComponentFactoryService
+export class TranslateErrorMsgComponentFactoryService
   implements ErrorMessageComponentFactory
 {
   constructor() {}

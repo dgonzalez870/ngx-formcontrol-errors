@@ -1,13 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ErrorMsgComponentFactoryService } from './error-msg-component-factory.service';
+import {
+  TranslateErrorMsgComponentFactoryService,
+} from './translate-error-msg-component-factory.service';
 
 describe('ErrorMsgComponentFactoryService', () => {
-  let service: ErrorMsgComponentFactoryService;
+  let service: TranslateErrorMsgComponentFactoryService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ErrorMsgComponentFactoryService);
+    service = TestBed.inject(TranslateErrorMsgComponentFactoryService);
   });
 
   it('should be created', () => {
