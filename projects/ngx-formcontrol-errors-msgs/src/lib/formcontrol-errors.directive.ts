@@ -155,7 +155,7 @@ export class FormcontrolErrorsDirective implements OnInit, OnDestroy {
     }
 
     if ('INVALID' === status && this.control?.touched) {
-      this.errorInfoComponent.instance.message = this.errorParser.parse(
+      this.errorInfoComponent.instance.messages = this.errorParser.parse(
         this.control.errors as ValidationErrors
       );
     } else if (
@@ -163,7 +163,7 @@ export class FormcontrolErrorsDirective implements OnInit, OnDestroy {
       status === 'VALID' ||
       this.control?.untouched
     ) {
-      this.errorInfoComponent.instance.message = '';
+      this.errorInfoComponent.instance.messages = null;
       this.errorInfoComponent.changeDetectorRef.detectChanges();
     }
   }

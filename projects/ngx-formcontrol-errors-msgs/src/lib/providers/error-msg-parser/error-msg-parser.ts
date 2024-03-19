@@ -1,5 +1,9 @@
 import { ValidationErrors } from '@angular/forms';
 
+import {
+  ErrorMessage,
+} from '../error-msg-component-factory/error-msg-component';
+
 export interface ErrorMsgParser {
   /**
    * Method to parse ValidationErrors into a readable string
@@ -7,5 +11,5 @@ export interface ErrorMsgParser {
    *
    * @param error - Validation error to parse
    */
-  parse(error: ValidationErrors): string;
+  parse(error: ValidationErrors): ErrorMessage[];
 }

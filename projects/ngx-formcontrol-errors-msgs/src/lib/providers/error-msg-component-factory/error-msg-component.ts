@@ -1,6 +1,8 @@
+export interface ErrorMessage {
+  message: string;
+  value?: unknown;
+}
+
 export interface ErrorMsgComponent {
-    message: string;
-  
-    value?: unknown;
-  }
-  
+  messages: ErrorMessage[] | null;
+}

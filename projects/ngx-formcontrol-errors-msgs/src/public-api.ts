@@ -4,6 +4,7 @@
 
 export * from './lib/data';
 export * from './lib/formcontrol-errors.directive';
+export * from './lib/providers/error-msg-component-factory/error-msg-component';
 export * from './lib/providers/error-msg-component-factory/error-msg-component-factory';
 export * from './lib/providers/error-msg-component-factory/error-msg-component-factory-token';
 export * from './lib/providers/error-msg-parser/error-msg-parser';
