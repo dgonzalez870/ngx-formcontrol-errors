@@ -3,6 +3,11 @@ import {
   Input,
 } from '@angular/core';
 
+import {
+  ErrorMessage,
+  ErrorMsgComponent,
+} from 'ngx-formcontrol-errors-msgs';
+
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
@@ -13,7 +18,15 @@ import { TranslateModule } from '@ngx-translate/core';
   imports: [TranslateModule],
   templateUrl: './error-msg-translate.component.html',
 })
-export class ErrorMsgTranslateComponent {
+export class ErrorMsgTranslateComponent implements ErrorMsgComponent {
   @Input()
-  message!: string;
+  set messages(errorMessages: ErrorMessage[] | null) {
+    if (!errorMessages?.length) {
+      this.displayMessage = { message: '' };
+      return;
+    }
+    this.displayMessage = errorMessages[0];
+  }
+
+  displayMessage: ErrorMessage = { message: '' };
 }

@@ -17,6 +17,10 @@ describe('validationErrors2KeyValue', () => {
         requiredLength: 5,
         actualLength: 3,
       },
+      maxLength: {
+        requiredLength: 5,
+        actualLength: 10,
+      },
     });
 
     expect(result).toEqual([
@@ -47,6 +51,13 @@ describe('validationErrors2KeyValue', () => {
         value: {
           requiredLength: 5,
           actualLength: 3,
+        },
+      },
+      {
+        key: 'maxLength',
+        value: {
+          requiredLength: 5,
+          actualLength: 10,
         },
       },
     ]);
