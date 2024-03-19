@@ -12,7 +12,7 @@ You can also try it in your browser [here](https://stackblitz.com/edit/stackblit
 
 ## Usage
 
-1. Import `FormcontrolErrorsDirective` in the component or module (You must import [ReactiveFormsModule](https://angular.io/api/forms/ReactiveFormsModule) too)
+1. Import `FormcontrolErrorsDirective` in the component (You must import [ReactiveFormsModule](https://angular.io/api/forms/ReactiveFormsModule) too)
 
 ```typescript
 import { Component } from '@angular/core';
@@ -304,6 +304,40 @@ export interface ErrorMessage {
 }
 ```
 
+2. Create a service that implements `ErrorMessageComponentFactory`, the `createComponent` method should return a `ComponentRef` of the component created in the previous step
+
+```typescript
+@Injectable({
+  ...
+})
+export class CustomMsgComponentFactoryService
+  implements ErrorMessageComponentFactory
+{
+  constructor() {}
+
+  createComponent(viewContainerRef: ViewContainerRef): ComponentRef<CustomErrorMsgComponent> {
+    return viewContainerRef.createComponent(CustomErrorMsgComponent);
+  }
+
+}
+
+```
+
+3. Provide `ERROR_MSG_COMPONENT_FACTORY` in `ApplicationConfig` using class `CustomMsgComponentFactoryService` (created in the previous step)
+
+```typescript
+export const appConfig: ApplicationConfig = {
+  providers: [
+    ...
+    {
+      provide: ERROR_MSG_COMPONENT_FACTORY,
+      useClass: CustomMsgComponentFactoryService,
+    },
+    ...
+  ],
+};
+```
+
 ## Styling
 
 This module does not provide any CSS stylesheet or settings,
@@ -337,3 +371,5 @@ Styles can also be applied at component level using `ng-deep`
   min-height: 1rem;
 }
 ```
+
+If you create a Custom error component like in [Component driven](#32-component-driven), you have to replace `ngx-formcontrol-errors` for your custom component selector.
