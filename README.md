@@ -142,15 +142,15 @@ If the application uses [ngx-translate](https://github.com/ngx-translate/core), 
 npm install --save ngx-formcontrol-msgs-translate-parser
 ```
 
-2. Provide `ERROR_MSG_PARSER` in `ApplicationConfig` using class `NgxTranslateMsgParserService`
+2. Provide `ERROR_MSG_COMPONENT_FACTORY` in `ApplicationConfig` using class `TranslateErrorMsgComponentFactoryService`
 
 ```typescript
 export const appConfig: ApplicationConfig = {
   providers: [
     ...
     {
-      provide: ERROR_MSG_PARSER,
-      useClass: NgxTranslateMsgParserService,
+      provide: ERROR_MSG_COMPONENT_FACTORY,
+      useClass: TranslateErrorMsgComponentFactoryService,
     },
     ...
   ],
@@ -226,7 +226,9 @@ export const appConfig: ApplicationConfig = {
 
 ### 3. Other I18N methods
 
-If the application uses I18N methods other than [NGX-TRANSLATE](#2-ngx-translate) or [Angular I18N](#1-angular-i18n), a custom parser must be created
+If the application uses I18N methods other than [NGX-TRANSLATE](#2-ngx-translate) or [Angular I18N](#1-angular-i18n), there are two posible aproaches: [service driven](#31-service-driven), [component driven](#32-component-driven)
+
+#### 3.1 Service driven
 
 1. Create a class or service that implements `ErrorMsgParser` and override the method `parse` to return customized translations that could reliy on a custom I18N service
 
@@ -264,6 +266,42 @@ export const appConfig: ApplicationConfig = {
     ...
   ],
 };
+```
+
+#### 3.2 Component Driven
+
+Select component driven aproach whenever you want to use any existing `pipe`, like the `translate` pipe available in `ngx-translate`, this way you can provide a custom component that uses the already available pipes.
+
+1. Create a component class that implements `ErrorMsgComponent`
+
+```typescript
+
+@Component({
+  ...
+})
+export class CustomErrorMsgComponent implements ErrorMsgComponent {
+
+  @Input()
+  messages: ErrorMessage[];
+
+  ...
+}
+```
+
+`ErrorMessage` is an **interface** with two properties:
+
+```typescript
+export interface ErrorMessage {
+  /**
+   * String to be displayed, customized or translated
+   */
+  message: string;
+
+  /**
+   * ValidationError content to be replaced in the `message` string
+   */
+  value?: unknown;
+}
 ```
 
 ## Styling
