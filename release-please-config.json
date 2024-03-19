@@ -1,4 +1,5 @@
 {
+  "plugins": ["node-workspace"],
   "prerelease": true,
   "packages": {
     ".": {
