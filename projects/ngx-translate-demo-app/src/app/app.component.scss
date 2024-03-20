@@ -61,6 +61,12 @@ main {
   label {
     display: inline-block;
     margin-bottom: 0.5rem;
+
+    &::after{
+      content: "*";
+      color: #ff0000;
+    }
+
   }
 
   input {
