@@ -1,5 +1,7 @@
 {
   "APP_DESCRIPTION": "This example shows the results of integrating <b>ngx-form-control-errors-msgs</b> with <b>ngx-translate</b>. Choose a language.",
+  "READ_CODE": "Read the source code <b><a href=\"https://github.com/dgonzalez870/ngx-formcontrol-errors/tree/main/projects/ngx-translate-demo-app\">here</a></b>",
+  "READ_DOCS": "Read the docs <b><a href=\"https://github.com/dgonzalez870/ngx-formcontrol-errors#readme\">here</a></b>",
   "FORM_LABELS": {
     "EMAIL": "Email",
     "NAME": "Name",

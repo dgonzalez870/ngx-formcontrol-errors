@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
       <trans-unit id="8953033926734869941" datatype="html">
         <source>Name</source>
@@ -26,17 +26,39 @@
           <context context-type="linenumber">19,21</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="3836834712265904401" datatype="html">
+      <trans-unit id="5817888607376627214" datatype="html">
         <source>This example shows the results of integrating
-    &lt;b&gt;ngx-form-control-errors-msgs&lt;/b&gt; with &lt;b&gt;Angular I18N&lt;/b&gt;.
+    &lt;b&gt;&lt;a href=&quot;https://github.com/dgonzalez870/ngx-formcontrol-errors#readme&quot;&gt;ngx-form-control-errors-msgs&lt;/a&gt;&lt;/b&gt; 
+     with &lt;b&gt;&lt;a href=&quot;https://angular.io/guide/i18n-overview&quot;&gt;Angular I18N&lt;/a&gt;&lt;/b&gt;.
      Choose a language.
   </source>
-        <target>este ejemplo presenta los resultados de integración con Angular I18N</target>
+        <target>Este ejemplo presenta el resultado de integrar
+    &lt;b&gt;&lt;a href=&quot;https://github.com/dgonzalez870/ngx-formcontrol-errors#readme&quot;&gt;ngx-form-control-errors-msgs&lt;/a&gt;&lt;/b&gt; 
+     con &lt;b&gt;&lt;a href=&quot;https://angular.io/guide/i18n-overview&quot;&gt;Angular I18N&lt;/a&gt;&lt;/b&gt;.
+     Seleccione un idioma.
+  </target>
         <context-group purpose="location">
           <context context-type="sourcefile">projects/angular-i18n-demo/src/app/app.component.ts</context>
-          <context context-type="linenumber">19,22</context>
+          <context context-type="linenumber">25,29</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="730746060744684851" datatype="html">
+        <source>Read the source code &lt;b&gt;&lt;a href=&quot;https://github.com/dgonzalez870/ngx-formcontrol-errors/tree/main/projects/angular-i18n-demo&quot;&gt;here&lt;/a&gt;&lt;/b&gt;</source>
+        <target>Lea el código fuente &lt;b&gt;&lt;a href=&quot;https://github.com/dgonzalez870/ngx-formcontrol-errors/tree/main/projects/angular-i18n-demo&quot;&gt;aquí&lt;/a&gt;&lt;/b&gt;</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-i18n-demo/src/app/app.component.ts</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3582000269893963424" datatype="html">
+        <source>Read the docs &lt;b&gt;&lt;a href=&quot;https://github.com/dgonzalez870/ngx-formcontrol-errors#readme&quot;&gt;here&lt;/a&gt;&lt;/b&gt;</source>
+        <target>Lea la documentación &lt;b&gt;&lt;a href=&quot;https://github.com/dgonzalez870/ngx-formcontrol-errors#readme&quot;&gt;aquí&lt;/a&gt;&lt;/b&gt;</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-i18n-demo/src/app/app.component.ts</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+
       <trans-unit id="2501969335659826225" datatype="html">
         <source>This field is required</source>
         <target>este campo es obligatorio</target>

@@ -18,11 +18,15 @@
         </form>
         <button (click)="reset()" i18n>Reset form</button>
 
-        <select name="language" id="language" (change)="changeLang($event)">
+        <select name="language" id="language" [formControl]="languageControl">
           <option value="en">English</option>
           <option value="es" selected>Español</option>
         </select>
       </div>
+
+      <p [innerHTML]="readCode"></p>
+      <p [innerHTML]="readDocs"></p>
+
     </div>
   </div>
 </main>

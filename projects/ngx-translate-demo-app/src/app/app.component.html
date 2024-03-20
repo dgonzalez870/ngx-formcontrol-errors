@@ -5,6 +5,9 @@
 
       <p [innerHTML]="'APP_DESCRIPTION' | translate"></p>
 
+      <p [innerHTML]="'READ_CODE' | translate"></p>
+      <p [innerHTML]="'READ_DOCS' | translate"></p>
+
       <div class="form-container">
         <form [formGroup]="form">
           <div class="form-row">
@@ -21,8 +24,8 @@
         </button>
 
         <select name="language" id="language" (change)="changeLang($event)">
-          <option value="en">English</option>
           <option value="es" selected>Español</option>
+          <option value="en">English</option>
         </select>
       </div>
     </div>
