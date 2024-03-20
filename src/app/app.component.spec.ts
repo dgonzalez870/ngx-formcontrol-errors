@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
@@ -17,13 +18,13 @@ describe('AppComponent', () => {
   it(`should have the 'ngx-form-control-errors' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ngx-form-control-errors');
+    expect(app.title).toEqual('ngx-form-control-errors-msgs');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('ngx-form-control-errors');
+    expect(compiled.querySelector('h1')?.textContent).toContain('ngx-form-control-errors-msgs');
   });
 });
