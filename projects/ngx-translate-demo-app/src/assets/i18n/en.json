@@ -7,10 +7,10 @@
   },
   "FORM_ERROR_MESSAGES": {
     "REQUIRED": "This field is required",
-    "MIN": "The minimun allowed values is {{value}}",
-    "MAX": "The max allowed value is {{value}}",
-    "MINLENGTH": "The minimun allowed length is {{value}}",
-    "MAXLENGTH": "The max allowed length is {{value}}",
+    "MIN": "The minimun allowed values is {{min}}",
+    "MAX": "The max allowed value is {{max}}",
+    "MINLENGTH": "The minimun allowed length is {{requiredLength}}",
+    "MAXLENGTH": "The max allowed length is {{requiredLength}}",
     "EMAIL": "Invalid email",
     "PATTERN": "Invalid pattern",
     "CUSTOM": "Ups, something went wrong"

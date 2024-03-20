@@ -16,13 +16,23 @@ describe('ErrorMsgParserService', () => {
 
   it('should parse error message for the `required` validation error', () => {
     const result = service.parse({ required: true });
-    expect(result).toEqual('This field is required');
+    expect(result).toEqual([
+      {
+        message: 'This field is required',
+        value: true,
+      },
+    ]);
   });
 
   it('should parse error message for the `min` validation error', () => {
     const result = service.parse({
       min: { min: 10, actual: 8 },
     });
-    expect(result).toEqual('The minimun allowed values is 10');
+    expect(result).toEqual([
+      {
+        message: 'The minimun allowed values is 10',
+        value: { min: 10, actual: 8 },
+      },
+    ]);
   });
 });

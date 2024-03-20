@@ -8,11 +8,11 @@ import {
 } from '@angular/core';
 
 import {
-  ERROR_MSG_PARSER,
+  ERROR_MSG_COMPONENT_FACTORY,
   FORM_ERROR_MESSAGES_PROVIDER,
 } from 'ngx-formcontrol-errors-msgs';
 import {
-  NgxTranslateMsgParserService,
+  TranslateErrorMsgComponentFactoryService,
 } from 'ngx-formcontrol-msgs-translate-parser';
 
 import {
@@ -41,8 +41,8 @@ export const appConfig: ApplicationConfig = {
       },
     },
     {
-      provide: ERROR_MSG_PARSER,
-      useClass: NgxTranslateMsgParserService,
+      provide: ERROR_MSG_COMPONENT_FACTORY,
+      useClass: TranslateErrorMsgComponentFactoryService,
     },
     importProvidersFrom([
       HttpClientModule,

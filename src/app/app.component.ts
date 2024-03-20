@@ -23,7 +23,7 @@ import {
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'ngx-form-control-errors';
+  title = 'ngx-form-control-errors-msgs';
 
   form = this.formBuilder.group({
     name: ['', [Validators.required, Validators.maxLength(10)]],

@@ -7,10 +7,10 @@
   },
   "FORM_ERROR_MESSAGES": {
     "REQUIRED": "Este campo es obligatorio",
-    "MIN": "El mínimo valor permitido es {{value}}",
-    "MAX": "El máximo valor permitido es {{value}}",
-    "MINLENGTH": "El mínimo número de caracteres es {{value}}",
-    "MAXLENGTH": "El máximo número de caracteres es {{value}}",
+    "MIN": "El mínimo valor permitido es {{min}}",
+    "MAX": "El máximo valor permitido es {{max}}",
+    "MINLENGTH": "El mínimo número de caracteres es {{requiredLength}}",
+    "MAXLENGTH": "El máximo número de caracteres es {{requiredLength}}",
     "EMAIL": "Correo electrónico inválido",
     "PATTERN": "Entrada inválida",
     "CUSTOM": "Ups, Algo salió mal"

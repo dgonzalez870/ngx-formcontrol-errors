@@ -12,7 +12,7 @@ You can also try it in your browser [here](https://stackblitz.com/edit/stackblit
 
 ## Usage
 
-1. Import `FormcontrolErrorsDirective` in the component or module (You must import [ReactiveFormsModule](https://angular.io/api/forms/ReactiveFormsModule) too)
+1. Import `FormcontrolErrorsDirective` in the component (You must import [ReactiveFormsModule](https://angular.io/api/forms/ReactiveFormsModule) too)
 
 ```typescript
 import { Component } from '@angular/core';
@@ -50,11 +50,11 @@ form = this.formBuilder.group({
 <form [formGroup]="form">
   <div class="form-row">
     <label for="name">Name</label>
-    <input type="text" formControlName="name" ngxFormcontrolErrors />
+    <input id="name" type="text" formControlName="name" ngxFormcontrolErrors />
   </div>
   <div class="form-row">
-    <label for="name">Email</label>
-    <input type="email" formControlName="email" ngxFormcontrolErrors />
+    <label for="email">Email</label>
+    <input id="email" type="email" formControlName="email" ngxFormcontrolErrors />
   </div>
 </form>
 ```
@@ -69,16 +69,16 @@ By default this module provides the following messages for
 ```typescript
 export const Messages: KeyValueObject = {
   required: "This field is required",
-  min: "The minimun allowed values is {{value}}",
-  max: "The max allowed value is {{value}}",
-  minlength: "The minimun allowed length is {{value}}",
-  maxlength: "The max allowed length is {{value}}",
+  min: "The minimun allowed values is {{min}}",
+  max: "The max allowed value is {{max}}",
+  minlength: "The minimun allowed length is {{requiredLength}}",
+  maxlength: "The max allowed length is {{requiredLength}}",
   email: "Invalid email",
   pattern: "Invalid pattern",
 };
 ```
 
-`{{value}}` is a string to be replaced at runtime by the actual validation reference value.
+Strings enclosed in double brackets, like `{{min}}`, `{{max}}`, `{{requiredLength}}`, are replaced at runtime by the actual validation reference value.
 Those messages can be overrided or extended by injecting new ones using
 `FORM_ERROR_MESSAGES_PROVIDER` in the [ApplicationConfig](https://angular.io/api/core/ApplicationConfig) object.
 
@@ -119,10 +119,10 @@ export const appConfig: ApplicationConfig = {
       provide: FORM_ERROR_MESSAGES_PROVIDER,
       useValue: {
         required: $localize `This field is required`,
-        min: $localize `The minimun allowed values is {{value}}`,
-        max: $localize `The max allowed value is {{value}}`,
-        minlength: $localize `The minimun allowed length is {{value}}`,
-        maxlength: $localize `The max allowed length is {{value}}`,
+        min: $localize `The minimun allowed values is {{min}}`,
+        max: $localize `The max allowed value is {{max}}`,
+        minlength: $localize `The minimun allowed length is {{requiredLength}}`,
+        maxlength: $localize `The max allowed length is {{requiredLength}}`,
         email: $localize `Invalid email`,
         pattern: $localize `Invalid pattern`,
       },
@@ -142,15 +142,15 @@ If the application uses [ngx-translate](https://github.com/ngx-translate/core), 
 npm install --save ngx-formcontrol-msgs-translate-parser
 ```
 
-2. Provide `ERROR_MSG_PARSER` in `ApplicationConfig` using class `NgxTranslateMsgParserService`
+2. Provide `ERROR_MSG_COMPONENT_FACTORY` in `ApplicationConfig` using class `TranslateErrorMsgComponentFactoryService`
 
 ```typescript
 export const appConfig: ApplicationConfig = {
   providers: [
     ...
     {
-      provide: ERROR_MSG_PARSER,
-      useClass: NgxTranslateMsgParserService,
+      provide: ERROR_MSG_COMPONENT_FACTORY,
+      useClass: TranslateErrorMsgComponentFactoryService,
     },
     ...
   ],
@@ -166,10 +166,10 @@ export const appConfig: ApplicationConfig = {
   ...
   "FORM_ERROR_MESSAGES": {
     "REQUIRED": "This field is required",
-    "MIN": "The minimun allowed values is {{value}}",
-    "MAX": "The max allowed value is {{value}}",
-    "MINLENGTH": "The minimun allowed length is {{value}}",
-    "MAXLENGTH": "The max allowed length is {{value}}",
+    "MIN": "The minimun allowed values is {{min}}",
+    "MAX": "The max allowed value is {{max}}",
+    "MINLENGTH": "The minimun allowed length is {{requiredLength}}",
+    "MAXLENGTH": "The max allowed length is {{requiredLength}}",
     "EMAIL": "Invalid email",
     "PATTERN": "Invalid pattern",
     "CUSTOM": "Ups, something went wrong",
@@ -186,10 +186,10 @@ export const appConfig: ApplicationConfig = {
   ...
   "FORM_ERROR_MESSAGES": {
     "REQUIRED": "Este campo es obligatorio",
-    "MIN": "El mínimo valor permitido es {{value}}",
-    "MAX": "El máximo valor permitido es {{value}}",
-    "MINLENGTH": "El mínimo número de caracteres es {{value}}",
-    "MAXLENGTH": "El máximo número de caracteres es {{value}}",
+    "MIN": "El mínimo valor permitido es {{min}}",
+    "MAX": "El máximo valor permitido es {{max}}",
+    "MINLENGTH": "El mínimo número de caracteres es {{requiredLength}}",
+    "MAXLENGTH": "El máximo número de caracteres es {{requiredLength}}",
     "EMAIL": "Email inválido",
     "PATTERN": "Entrada inválida",
     "CUSTOM": "Ups, Algo salió mal",
@@ -226,7 +226,9 @@ export const appConfig: ApplicationConfig = {
 
 ### 3. Other I18N methods
 
-If the application uses I18N methods other than [NGX-TRANSLATE](#2-ngx-translate) or [Angular I18N](#1-angular-i18n), a custom parser must be created
+If the application uses I18N methods other than [NGX-TRANSLATE](#2-ngx-translate) or [Angular I18N](#1-angular-i18n), there are two posible aproaches: [service driven](#31-service-driven), [component driven](#32-component-driven)
+
+#### 3.1 Service driven
 
 1. Create a class or service that implements `ErrorMsgParser` and override the method `parse` to return customized translations that could reliy on a custom I18N service
 
@@ -266,6 +268,76 @@ export const appConfig: ApplicationConfig = {
 };
 ```
 
+#### 3.2 Component Driven
+
+Select component driven aproach whenever you want to use any existing `pipe`, like the `translate` pipe available in `ngx-translate`, this way you can provide a custom component that uses the already available pipes.
+
+1. Create a component class that implements `ErrorMsgComponent`
+
+```typescript
+
+@Component({
+  ...
+})
+export class CustomErrorMsgComponent implements ErrorMsgComponent {
+
+  @Input()
+  messages: ErrorMessage[];
+
+  ...
+}
+```
+
+`ErrorMessage` is an **interface** with two properties:
+
+```typescript
+export interface ErrorMessage {
+  /**
+   * String to be displayed, customized or translated
+   */
+  message: string;
+
+  /**
+   * ValidationError content to be replaced in the `message` string
+   */
+  value?: unknown;
+}
+```
+
+2. Create a service that implements `ErrorMessageComponentFactory`, the `createComponent` method should return a `ComponentRef` of the component created in the previous step
+
+```typescript
+@Injectable({
+  ...
+})
+export class CustomMsgComponentFactoryService
+  implements ErrorMessageComponentFactory
+{
+  constructor() {}
+
+  createComponent(viewContainerRef: ViewContainerRef): ComponentRef<CustomErrorMsgComponent> {
+    return viewContainerRef.createComponent(CustomErrorMsgComponent);
+  }
+
+}
+
+```
+
+3. Provide `ERROR_MSG_COMPONENT_FACTORY` in `ApplicationConfig` using class `CustomMsgComponentFactoryService` (created in the previous step)
+
+```typescript
+export const appConfig: ApplicationConfig = {
+  providers: [
+    ...
+    {
+      provide: ERROR_MSG_COMPONENT_FACTORY,
+      useClass: CustomMsgComponentFactoryService,
+    },
+    ...
+  ],
+};
+```
+
 ## Styling
 
 This module does not provide any CSS stylesheet or settings,
@@ -299,3 +371,5 @@ Styles can also be applied at component level using `ng-deep`
   min-height: 1rem;
 }
 ```
+
+If you create a Custom error component like in [Component driven](#32-component-driven), you have to replace `ngx-formcontrol-errors` for your custom component selector.

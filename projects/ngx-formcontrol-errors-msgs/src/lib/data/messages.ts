@@ -5,10 +5,10 @@ import { KeyValueObject } from '../types';
  */
 export const Messages: KeyValueObject = {
   required: 'This field is required',
-  min: 'The minimun allowed values is {{value}}',
-  max: 'The max allowed value is {{value}}',
-  minlength: 'The minimun allowed length is {{value}}',
-  maxlength: 'The max allowed length is {{value}}',
+  min: 'The minimun allowed values is {{min}}',
+  max: 'The max allowed value is {{max}}',
+  minlength: 'The minimun allowed length is {{requiredLength}}',
+  maxlength: 'The max allowed length is {{requiredLength}}',
   email: 'Invalid email',
   pattern: 'Invalid pattern',
 };
