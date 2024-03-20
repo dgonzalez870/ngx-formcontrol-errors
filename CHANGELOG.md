@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [17.0.0](https://github.com/dgonzalez870/ngx-formcontrol-errors/compare/v0.1.0-0...v17.0.0) (2024-03-20)
+
+
+### Bug Fixes
+
+* update messages on language change using ngx-translate ([#16](https://github.com/dgonzalez870/ngx-formcontrol-errors/issues/16)) ([c1187df](https://github.com/dgonzalez870/ngx-formcontrol-errors/commit/c1187df1eb65ca37b1f9fe386d0357437df62bca))
+
+
+### Miscellaneous Chores
+
+* release 17.0.0 ([b75b864](https://github.com/dgonzalez870/ngx-formcontrol-errors/commit/b75b86444841020d0ac706d595320435be23081d))
+
 ## [0.1.0-0](https://github.com/dgonzalez870/ngx-formcontrol-errors/compare/v0.0.1-0...v0.1.0-0) (2024-03-18)
 
 
