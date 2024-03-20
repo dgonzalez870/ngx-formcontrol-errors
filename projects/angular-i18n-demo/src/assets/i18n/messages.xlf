@@ -56,28 +56,28 @@
         </context-group>
       </trans-unit>
       <trans-unit id="2096407738062347939" datatype="html">
-        <source>The minimun allowed values is {{value}}</source>
+        <source>The minimun allowed values is {{min}}</source>
         <context-group purpose="location">
           <context context-type="sourcefile">projects/angular-i18n-demo/src/app/app.config.ts</context>
           <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8535928398831740915" datatype="html">
-        <source>The max allowed value is {{value}}</source>
+        <source>The max allowed value is {{max}}</source>
         <context-group purpose="location">
           <context context-type="sourcefile">projects/angular-i18n-demo/src/app/app.config.ts</context>
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8911639506690086844" datatype="html">
-        <source>The minimun allowed length is {{value}}</source>
+        <source>The minimun allowed length is {{requiredLength}}</source>
         <context-group purpose="location">
           <context context-type="sourcefile">projects/angular-i18n-demo/src/app/app.config.ts</context>
           <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3011718161717240991" datatype="html">
-        <source>The max allowed length is {{value}}</source>
+        <source>The max allowed length is {{requiredLength}}</source>
         <context-group purpose="location">
           <context context-type="sourcefile">projects/angular-i18n-demo/src/app/app.config.ts</context>
           <context context-type="linenumber">14</context>
