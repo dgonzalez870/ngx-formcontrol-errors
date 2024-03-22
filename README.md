@@ -1,5 +1,8 @@
 # NgxFormControlErrorsMsgs
 
+![NPM Version](https://img.shields.io/npm/v/ngx-formcontrol-errors-msgs)
+![code coverage](https://dgonzalez870.github.io/ngx-formcontrol-errors/core-coverage-badge.svg)
+
 This is a directive that provides an uncomplicated way to display [Angular ValidationErrors](https://angular.io/api/forms/ValidationErrors) in [Reactive Forms](https://angular.io/guide/reactive-forms)
 
 See It working on this [demo](https://dgonzalez870.github.io/ngx-formcontrol-errors/).
