@@ -155,7 +155,8 @@
               "zone.js",
               "zone.js/testing"
             ],
-            "karmaConfig": "projects/ngx-formcontrol-errors-msgs/karma.conf.js"
+            "karmaConfig": "projects/ngx-formcontrol-errors-msgs/karma.conf.js",
+            "codeCoverage": true
           }
         },
         "lint": {
@@ -203,7 +204,8 @@
               "zone.js",
               "zone.js/testing"
             ],
-            "karmaConfig": "projects/ngx-formcontrol-msgs-translate-parser/karma.conf.js"
+            "karmaConfig": "projects/ngx-formcontrol-msgs-translate-parser/karma.conf.js",
+            "codeCoverage": true
           }
         },
         "lint": {
