@@ -11,6 +11,9 @@
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "paths": {
+      "demo-styles": [
+        "./dist/demo-styles"
+      ],
       "ngx-formcontrol-errors-msgs": [
         "./dist/ngx-formcontrol-errors-msgs"
       ],
