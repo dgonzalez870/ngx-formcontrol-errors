@@ -17,7 +17,6 @@ import {
   standalone: true,
   imports: [FormcontrolErrorsDirective, ReactiveFormsModule, TranslateModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'ngx-translate-demo-app';
