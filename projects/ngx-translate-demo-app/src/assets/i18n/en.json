@@ -5,7 +5,8 @@
   "FORM_LABELS": {
     "EMAIL": "Email",
     "NAME": "Name",
-    "RESET_FORM": "Reset form"
+    "RESET_FORM": "Reset form",
+    "SUBMIT": "Submit"
   },
   "FORM_ERROR_MESSAGES": {
     "REQUIRED": "This field is required",

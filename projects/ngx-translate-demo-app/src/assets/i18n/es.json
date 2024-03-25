@@ -5,7 +5,8 @@
   "FORM_LABELS": {
     "EMAIL": "Correo Electrónico",
     "NAME": "Nombre",
-    "RESET_FORM": "Reiniciar formulario"
+    "RESET_FORM": "Reiniciar formulario",
+    "SUBMIT": "Enviar"
   },
   "FORM_ERROR_MESSAGES": {
     "REQUIRED": "Este campo es obligatorio",
