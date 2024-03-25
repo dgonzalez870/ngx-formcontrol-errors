@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   ElementRef,
   Input,
@@ -13,6 +14,7 @@ import {
   selector: 'ngx-formcontrol-errors',
   standalone: true,
   template: ``,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NgxFormcontrolErrorsComponent implements ErrorMsgComponent {
   @Input()
