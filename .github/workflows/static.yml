@@ -44,6 +44,8 @@ jobs:
         run: npm run build:core
       - name: Build translate library
         run: npm run build:translate
+      - name: Build styles
+        run: npm run build:styles
       - name: Test main app
         run: npm run test
       - name: Build main app
