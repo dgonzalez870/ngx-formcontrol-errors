@@ -1,6 +1,7 @@
 import {
   ComponentRef,
   Directive,
+  Host,
   HostListener,
   Inject,
   OnDestroy,
@@ -10,8 +11,9 @@ import {
 } from '@angular/core';
 import {
   AbstractControl,
+  FormControl,
   FormControlName,
-  NgControl,
+  FormGroupDirective,
   ValidationErrors,
 } from '@angular/forms';
 
@@ -74,9 +76,8 @@ import {
   standalone: true,
 })
 export class FormcontrolErrorsDirective implements OnInit, OnDestroy {
-  private errorInfoComponent: ComponentRef<ErrorMsgComponent> | null =
-    null;
-  private control: AbstractControl | null = null;
+  private errorInfoComponent: ComponentRef<ErrorMsgComponent> | null = null;
+  private control!: AbstractControl;
   private sub$ = new Subscription();
   private errorParser?: ErrorMsgParser;
 
@@ -85,16 +86,16 @@ export class FormcontrolErrorsDirective implements OnInit, OnDestroy {
    */
   @HostListener('blur')
   onBlur(): void {
-    if (this.control) {
-      this.control.markAsTouched();
-      this.validataStatus(this.control.status);
-    }
+    this.control.markAsTouched();
+    this.validataStatus(this.control.status);
   }
+
   constructor(
     private readonly viewContainerRef: ViewContainerRef,
     private readonly errorMsgParser: ErrorMsgParserService,
-    @Optional() private readonly formControlName: FormControlName,
-    @Optional() private readonly formControl: NgControl,
+    private formGroup: FormGroupDirective,
+    @Optional() @Host() private readonly formControlName: FormControlName,
+    @Optional() @Host() private readonly formControl: FormControl,
     @Optional()
     @Inject(ERROR_MSG_PARSER)
     private readonly customErrorMsgParser: ErrorMsgParser,
@@ -107,7 +108,7 @@ export class FormcontrolErrorsDirective implements OnInit, OnDestroy {
    * @internal
    */
   ngOnInit(): void {
-    this.control = this.formControlName?.control || this.formControl?.control;
+    this.control = this.formControlName?.control || this.formControl;
 
     if (!this.control) {
       throw new Error(
@@ -127,6 +128,15 @@ export class FormcontrolErrorsDirective implements OnInit, OnDestroy {
         NgxFormcontrolErrorsComponent
       );
     }
+
+    this.sub$.add(
+      this.formGroup.ngSubmit.subscribe(() => {
+        if (!this.control.touched) {
+          this.control.markAsTouched();
+          this.validataStatus(this.control?.status);
+        }
+      })
+    );
 
     this.sub$.add(
       this.control.statusChanges?.subscribe((status) => {
