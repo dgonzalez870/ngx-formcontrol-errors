@@ -48,7 +48,8 @@ form = this.formBuilder.group({
 });
 ```
 
-3. Place the directive in the template along with [FormControlName](https://angular.io/api/forms/FormControlName)
+3. Place the directive in the template along with [FormControlName](https://angular.io/api/forms/FormControlName) or
+[FormControl](https://angular.io/api/forms/FormControl)
 
 ```html
 <form [formGroup]="form">
