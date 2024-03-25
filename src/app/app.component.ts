@@ -20,7 +20,6 @@ import {
     SourceCodeContainerComponent,
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'ngx-form-control-errors-msgs';
@@ -34,5 +33,9 @@ export class AppComponent {
 
   reset(): void {
     this.form.reset();
+  }
+
+  onSubmit(): void {
+    console.log('submitting.....');
   }
 }

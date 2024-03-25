@@ -6,7 +6,7 @@
       <p>Angular directive to easily show errors in form controls</p>
 
       <div class="form-container">
-        <form [formGroup]="form">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
           <div class="form-row">
             <label for="name">Name</label>
             <input type="text" formControlName="name" ngxFormcontrolErrors />
@@ -15,8 +15,9 @@
             <label for="name">Email</label>
             <input type="email" formControlName="email" ngxFormcontrolErrors />
           </div>
+          <button type="button" (click)="reset()">Reset Form</button>
+          <button type="submit">Submit</button>
         </form>
-        <button (click)="reset()">Reset Form</button>
       </div>
     </div>
 
