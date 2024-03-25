@@ -7,7 +7,7 @@
         <target>Nombre</target>
         <context-group purpose="location">
           <context context-type="sourcefile">projects/angular-i18n-demo/src/app/app.component.html</context>
-          <context context-type="linenumber">11,12</context>
+          <context context-type="linenumber">19,20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4768749765465246664" datatype="html">
@@ -15,7 +15,7 @@
         <target>Correo Electrónico</target>
         <context-group purpose="location">
           <context context-type="sourcefile">projects/angular-i18n-demo/src/app/app.component.html</context>
-          <context context-type="linenumber">15,16</context>
+          <context context-type="linenumber">23,24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9144388092572424640" datatype="html">
@@ -23,7 +23,15 @@
         <target>Reiniciar formulario</target>
         <context-group purpose="location">
           <context context-type="sourcefile">projects/angular-i18n-demo/src/app/app.component.html</context>
-          <context context-type="linenumber">19,21</context>
+          <context context-type="linenumber">26,27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="935187492052582731" datatype="html">
+        <source>Submit</source>
+        <source>Enviar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-i18n-demo/src/app/app.component.html</context>
+          <context context-type="linenumber">27,28</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5817888607376627214" datatype="html">
@@ -39,7 +47,7 @@
   </target>
         <context-group purpose="location">
           <context context-type="sourcefile">projects/angular-i18n-demo/src/app/app.component.ts</context>
-          <context context-type="linenumber">25,29</context>
+          <context context-type="linenumber">24,28</context>
         </context-group>
       </trans-unit>
       <trans-unit id="730746060744684851" datatype="html">
@@ -47,7 +55,7 @@
         <target>Lea el código fuente &lt;b&gt;&lt;a href=&quot;https://github.com/dgonzalez870/ngx-formcontrol-errors/tree/main/projects/angular-i18n-demo&quot;&gt;aquí&lt;/a&gt;&lt;/b&gt;</target>
         <context-group purpose="location">
           <context context-type="sourcefile">projects/angular-i18n-demo/src/app/app.component.ts</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3582000269893963424" datatype="html">
@@ -55,7 +63,7 @@
         <target>Lea la documentación &lt;b&gt;&lt;a href=&quot;https://github.com/dgonzalez870/ngx-formcontrol-errors#readme&quot;&gt;aquí&lt;/a&gt;&lt;/b&gt;</target>
         <context-group purpose="location">
           <context context-type="sourcefile">projects/angular-i18n-demo/src/app/app.component.ts</context>
-          <context context-type="linenumber">33</context>
+          <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
 

@@ -5,6 +5,14 @@
 
       <p [innerHTML]="description"></p>
 
+      <select name="language" id="language" [formControl]="languageControl">
+        <option value="en">English</option>
+        <option value="es" selected>Español</option>
+      </select>
+
+      <p [innerHTML]="readCode"></p>
+      <p [innerHTML]="readDocs"></p>
+
       <div class="form-container">
         <form [formGroup]="form">
           <div class="form-row">
@@ -15,17 +23,11 @@
             <label for="email" i18n>Email</label>
             <input type="email" formControlName="email" ngxFormcontrolErrors />
           </div>
+          <button type="button" (click)="reset()" i18n>Reset form</button>
+          <button type="submit" i18n>Submit</button>
         </form>
-        <button (click)="reset()" i18n>Reset form</button>
 
-        <select name="language" id="language" [formControl]="languageControl">
-          <option value="en">English</option>
-          <option value="es" selected>Español</option>
-        </select>
       </div>
-
-      <p [innerHTML]="readCode"></p>
-      <p [innerHTML]="readDocs"></p>
 
     </div>
   </div>
