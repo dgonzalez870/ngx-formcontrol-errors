@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [17.1.0](https://github.com/dgonzalez870/ngx-formcontrol-errors/compare/v17.0.0...v17.1.0) (2024-03-25)
+
+
+### Features
+
+* add support for `FormControl`, not only `FormControlName` ([#21](https://github.com/dgonzalez870/ngx-formcontrol-errors/issues/21)) ([fed6fc5](https://github.com/dgonzalez870/ngx-formcontrol-errors/commit/fed6fc5444e638c231892a215ce91afccc3c2adb))
+
 ## [17.0.0](https://github.com/dgonzalez870/ngx-formcontrol-errors/compare/v0.1.0-0...v17.0.0) (2024-03-20)
 
 
