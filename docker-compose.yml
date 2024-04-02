@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  server:
+    image: 'nginx:mainline-alpine3.18-perl'
+    restart: no
+    volumes:
+      - ./dist/ngx-form-control-errors/browser:/usr/share/nginx/html/ngx-formcontrol-errors
+      - ./docker/nginx/nginx.conf:/etc/nginx/conf.d
+    ports:
+      - 80:80
