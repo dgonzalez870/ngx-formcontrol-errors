@@ -46,14 +46,14 @@
     "release": "npx commit-and-tag-version"
   },
   "dependencies": {
-    "@angular/animations": "^17.2.0",
-    "@angular/common": "^17.2.0",
-    "@angular/compiler": "^17.2.0",
-    "@angular/core": "^17.2.0",
-    "@angular/forms": "^17.2.0",
-    "@angular/platform-browser": "^17.2.0",
-    "@angular/platform-browser-dynamic": "^17.2.0",
-    "@angular/router": "^17.2.0",
+    "@angular/animations": "^18.1.4",
+    "@angular/common": "^18.1.4",
+    "@angular/compiler": "^18.1.4",
+    "@angular/core": "^18.1.4",
+    "@angular/forms": "^18.1.4",
+    "@angular/platform-browser": "^18.1.4",
+    "@angular/platform-browser-dynamic": "^18.1.4",
+    "@angular/router": "^18.1.4",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
     "highlight.js": "^11.9.0",
@@ -69,8 +69,8 @@
     "@angular-eslint/schematics": "17.2.1",
     "@angular-eslint/template-parser": "17.2.1",
     "@angular/cli": "^17.2.3",
-    "@angular/compiler-cli": "^17.2.0",
-    "@angular/localize": "^17.2.4",
+    "@angular/compiler-cli": "^18.1.4",
+    "@angular/localize": "^18.1.4",
     "@commitlint/cli": "^19.0.3",
     "@commitlint/config-conventional": "^19.0.3",
     "@types/jasmine": "~5.1.0",
@@ -89,6 +89,6 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^17.2.0",
     "typedoc": "^0.25.12",
-    "typescript": "~5.3.2"
+    "typescript": "~5.5.4"
   }
 }
