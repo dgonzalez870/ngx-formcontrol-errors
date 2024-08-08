@@ -7,7 +7,7 @@ All notable changes to this project will be documented in this file. See [commit
 
 ### ⚠ BREAKING CHANGES
 
-* update to `angular 18` (#24)
+* update to `angular 18` ([#24](https://github.com/dgonzalez870/ngx-formcontrol-errors/issues/24))
 
 ### Features
 
