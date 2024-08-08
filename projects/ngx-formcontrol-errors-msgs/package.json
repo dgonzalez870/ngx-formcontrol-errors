@@ -1,6 +1,6 @@
 {
   "name": "ngx-formcontrol-errors-msgs",
-  "version": "17.1.0",
+  "version": "18.0.0",
   "description": "A directive for showing errors in Angular form controls on reactive forms",
   "keywords": [
     "angular",
