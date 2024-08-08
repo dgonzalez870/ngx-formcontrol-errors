@@ -1,6 +1,6 @@
 import {
   HttpClient,
-  HttpClientModule,
+  provideHttpClient,
 } from '@angular/common/http';
 import {
   ApplicationConfig,
@@ -27,6 +27,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideHttpClient(),
     {
       provide: FORM_ERROR_MESSAGES_PROVIDER,
       useValue: {
@@ -45,7 +46,6 @@ export const appConfig: ApplicationConfig = {
       useClass: TranslateErrorMsgComponentFactoryService,
     },
     importProvidersFrom([
-      HttpClientModule,
       TranslateModule.forRoot({
         defaultLanguage: 'es',
         useDefaultLang: true,
