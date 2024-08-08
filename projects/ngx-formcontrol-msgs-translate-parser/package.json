@@ -1,6 +1,6 @@
 {
   "name": "ngx-formcontrol-msgs-translate-parser",
-  "version": "17.0.0",
+  "version": "18.0.0",
   "description": "A module to internationalize ngx-formcontrol-errors-msgs using ngx-translate",
   "keywords": [
     "angular",
