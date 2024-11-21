@@ -83,6 +83,12 @@ export const Messages: KeyValueObject = {
 };
 ```
 
+Where `KeyValueObject` is custom type defined by:
+
+```typescript
+export type KeyValueObject = { [key: string]: string };
+```
+
 Strings enclosed in double brackets, like `{{min}}`, `{{max}}`, `{{requiredLength}}`, are replaced at runtime by the actual validation reference value.
 Those messages can be overrided or extended by injecting new ones using
 `FORM_ERROR_MESSAGES_PROVIDER` in the [ApplicationConfig](https://angular.io/api/core/ApplicationConfig) object.
