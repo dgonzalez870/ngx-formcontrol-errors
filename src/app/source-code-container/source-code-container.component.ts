@@ -13,11 +13,10 @@ import {
 } from '../source-code-section/source-code-section.component';
 
 @Component({
-  selector: 'app-source-code-container',
-  standalone: true,
-  imports: [SourceCodeSectionComponent],
-  templateUrl: './source-code-container.component.html',
-  styleUrl: './source-code-container.component.scss',
+    selector: 'app-source-code-container',
+    imports: [SourceCodeSectionComponent],
+    templateUrl: './source-code-container.component.html',
+    styleUrl: './source-code-container.component.scss'
 })
 export class SourceCodeContainerComponent implements OnInit {
   codeExamples!: CodeExample[];

@@ -19,7 +19,7 @@ import { FormcontrolErrorsDirective } from './formcontrol-errors.directive';
 
 // Dummy component for testing the directive
 @Component({
-  template: `
+    template: `
     <form [formGroup]="form">
       <div>
         <label for="name">Name</label>
@@ -32,6 +32,7 @@ import { FormcontrolErrorsDirective } from './formcontrol-errors.directive';
       </div>
     </form>
   `,
+    standalone: false
 })
 class FormControlTestComponent {
   form: FormGroup;

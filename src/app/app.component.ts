@@ -12,14 +12,13 @@ import {
 } from './source-code-container/source-code-container.component';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
-    FormcontrolErrorsDirective,
-    ReactiveFormsModule,
-    SourceCodeContainerComponent,
-  ],
-  templateUrl: './app.component.html',
+    selector: 'app-root',
+    imports: [
+        FormcontrolErrorsDirective,
+        ReactiveFormsModule,
+        SourceCodeContainerComponent,
+    ],
+    templateUrl: './app.component.html'
 })
 export class AppComponent {
   title = 'ngx-form-control-errors-msgs';

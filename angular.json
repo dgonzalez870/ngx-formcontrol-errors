@@ -31,6 +31,7 @@
             ],
             "styles": [
               "src/styles.scss",
+              "projects/demo-styles/src/lib/styles/styles.scss",
               "node_modules/highlight.js/styles/github.min.css"
             ],
             "scripts": []
@@ -246,6 +247,7 @@
               "projects/ngx-translate-demo-app/src/assets"
             ],
             "styles": [
+              "projects/demo-styles/src/lib/styles/styles.scss",
               "projects/ngx-translate-demo-app/src/styles.scss"
             ],
             "scripts": []
@@ -365,7 +367,8 @@
             "index": "projects/angular-i18n-demo/src/index.html",
             "browser": "projects/angular-i18n-demo/src/main.ts",
             "polyfills": [
-              "zone.js"
+              "zone.js",
+              "@angular/localize/init"
             ],
             "tsConfig": "projects/angular-i18n-demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -374,6 +377,7 @@
               "projects/angular-i18n-demo/src/assets"
             ],
             "styles": [
+              "projects/demo-styles/src/lib/styles/styles.scss",
               "projects/angular-i18n-demo/src/styles.scss"
             ],
             "scripts": []
@@ -513,6 +517,7 @@
   "cli": {
     "schematicCollections": [
       "@angular-eslint/schematics"
-    ]
+    ],
+    "analytics": false
   }
 }

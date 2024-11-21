@@ -13,10 +13,9 @@ import {
 } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [FormcontrolErrorsDirective, ReactiveFormsModule, TranslateModule],
-  templateUrl: './app.component.html',
+    selector: 'app-root',
+    imports: [FormcontrolErrorsDirective, ReactiveFormsModule, TranslateModule],
+    templateUrl: './app.component.html'
 })
 export class AppComponent {
   title = 'ngx-translate-demo-app';

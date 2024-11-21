@@ -14,10 +14,9 @@ import { FormcontrolErrorsDirective } from 'ngx-formcontrol-errors-msgs';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [FormcontrolErrorsDirective, ReactiveFormsModule],
-  templateUrl: './app.component.html',
+    selector: 'app-root',
+    imports: [FormcontrolErrorsDirective, ReactiveFormsModule],
+    templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit, OnDestroy {
   title = 'Ngx-formcontrol-errors-msgs Angular I18N demo';
