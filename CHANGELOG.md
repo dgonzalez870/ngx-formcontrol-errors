@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [20.0.0](https://github.com/dgonzalez870/ngx-formcontrol-errors/compare/v19.0.0...v20.0.0) (2025-08-13)
+
 ## [19.0.0](https://github.com/dgonzalez870/ngx-formcontrol-errors/compare/v18.0.0...v19.0.0) (2024-11-21)
 
 
