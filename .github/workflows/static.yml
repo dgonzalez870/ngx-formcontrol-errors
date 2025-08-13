@@ -37,7 +37,7 @@ jobs:
           # Set always-auth in npmrc.
           always-auth: false # optional, default is false
           # Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.
-          node-version: 18 # optional
+          node-version: 22.15 # optional
       - name: Install dependencies
         run: npm ci
       - name: Build core library
