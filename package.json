@@ -25,6 +25,7 @@
     "test:core": "npx ng test ngx-formcontrol-errors-msgs --no-watch --no-progress --browsers=ChromeHeadless",
     "test:translate": "npx ng test ngx-formcontrol-msgs-translate-parser --no-watch --no-progress --browsers=ChromeHeadless",
     "test:translate-demo-app": "npx ng test ngx-translate-demo-app --no-watch --no-progress --browsers=ChromeHeadless",
+    "test:angular-i18n-demo-app": "npx ng test angular-i18n-demo --no-watch --no-progress --browsers=ChromeHeadless",
     "build:core": "npx ng build -c production ngx-formcontrol-errors-msgs && cp README.md LICENSE ./dist/ngx-formcontrol-errors-msgs/",
     "build:translate": "npx ng build -c production ngx-formcontrol-msgs-translate-parser && cp LICENSE ./dist/ngx-formcontrol-msgs-translate-parser/",
     "build:styles": "npx ng build -c production demo-styles",
@@ -46,14 +47,14 @@
     "release": "npx commit-and-tag-version"
   },
   "dependencies": {
-    "@angular/animations": "^19.0.0",
-    "@angular/common": "^19.0.0",
-    "@angular/compiler": "^19.0.0",
-    "@angular/core": "^19.0.0",
-    "@angular/forms": "^19.0.0",
-    "@angular/platform-browser": "^19.0.0",
-    "@angular/platform-browser-dynamic": "^19.0.0",
-    "@angular/router": "^19.0.0",
+    "@angular/animations": "^20.0.2",
+    "@angular/common": "^20.0.2",
+    "@angular/compiler": "^20.0.2",
+    "@angular/core": "^20.0.2",
+    "@angular/forms": "^20.0.2",
+    "@angular/platform-browser": "^20.0.2",
+    "@angular/platform-browser-dynamic": "^20.0.2",
+    "@angular/router": "^20.0.2",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
     "highlight.js": "^11.9.0",
@@ -62,15 +63,15 @@
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^19.0.0",
     "@angular-eslint/builder": "18.2.0",
     "@angular-eslint/eslint-plugin": "18.2.0",
     "@angular-eslint/eslint-plugin-template": "18.2.0",
     "@angular-eslint/schematics": "18.2.0",
     "@angular-eslint/template-parser": "18.2.0",
-    "@angular/cli": "^19.0.0",
-    "@angular/compiler-cli": "^19.0.0",
-    "@angular/localize": "^19.0.0",
+    "@angular/build": "^20.0.1",
+    "@angular/cli": "^20.0.1",
+    "@angular/compiler-cli": "^20.0.2",
+    "@angular/localize": "^20.0.2",
     "@commitlint/cli": "^19.0.3",
     "@commitlint/config-conventional": "^19.0.3",
     "@types/jasmine": "~5.1.0",
@@ -87,8 +88,8 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "ng-packagr": "^19.0.0",
-    "typedoc": "^0.26.5",
-    "typescript": "~5.5.4"
+    "ng-packagr": "^20.0.0",
+    "typedoc": "^0.28.5",
+    "typescript": "~5.8.3"
   }
 }
