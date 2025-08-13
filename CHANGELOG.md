@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [19.0.0](https://github.com/dgonzalez870/ngx-formcontrol-errors/compare/v18.0.0...v19.0.0) (2025-08-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* angular 19 update ([#26](https://github.com/dgonzalez870/ngx-formcontrol-errors/issues/26))
+
+### Features
+
+* angular 19 update ([#26](https://github.com/dgonzalez870/ngx-formcontrol-errors/issues/26)) ([33831d4](https://github.com/dgonzalez870/ngx-formcontrol-errors/commit/33831d489bbb31835f5d4d110a142f5802cb7cda))
+
 ## [19.0.0](https://github.com/dgonzalez870/ngx-formcontrol-errors/compare/v18.0.0...v19.0.0) (2024-11-21)
 
 
